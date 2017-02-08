@@ -71,4 +71,4 @@ deploy:
         type: git
         repo: https://github.com/claychen/claychen.github.io.git
         branch: master
-        message: 'add _config.yml .gitignore to branch hexo'
+        message: 'update blog'
