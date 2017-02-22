@@ -7,29 +7,31 @@ tags: [statistics, anova]
 ## ANOVA 簡介
 - ANalysis Of VAriance
 - 中文稱「**平均數的變異數分析**」
-- 假設兩個組，沒吃藥與有吃藥的平均血壓值有差異，究竟只是抽樣的問題，或真有差異？
+- 假設三個組，分別為沒吃藥、有吃藥、有吃安慰劑，三組的平均血壓值不相同，這究竟只是抽樣的問題，或真有差異？
 - F 檢定的應用
 
 ### 三大假設
 - 常態性假設：每組反應變數的母體均為常態分配
-註
 
 $$ Y\_{i} \sim N(\mu_{i},\sigma), i = 1,2,...k $$
 
 - 同質性假設：每組的母體變異數都相等 (通常用Levene同質性檢定)
 $$ \sigma\_{i}^{2} = \sigma^2 $$
 
-- 獨立性假設：抽自各母體的各組隨機樣本互為獨立。
+- 獨立性假設：樣本在組間、組內均獨立。
 
 ### 公式
 - 總變異
 	總變異 = 組間變異 + 隨機變異
     $$ SST = SSF + SSE $$
+    $$ SST: sum\ of\ squares\ due\ to\ total $$
+    $$ SSF: sum\ of\ squares\ due\ to\ factor $$
+    $$ SSE: sum\ of\ squares\ due\ to\ error $$
 - 因子變異(組間變異)
 
-**符號**
-- $k$ 指的是組數
-- $n$ 指的是組內的樣本數
+	- **符號**
+	- $k$ 指的是組數
+	- $n$ 指的是組內的樣本數
 
 $$ SSF = \sum\_{i=1}^{k}\sum\_{j=1}^{n\_i}(\overline{Y\_{i}} - \overline{\overline{Y}})^2 $$
 或
@@ -40,7 +42,9 @@ $$ SSE = \sum\_{i=1}^{k}\sum\_{j=1}^{n\_i}(Y\_{ij} - \overline{Y\_{i}})^2 $$
 或
 $$ SSE = \sum\_{i=1}^{k}(n-1)S\_{i}^2 $$
 
-舉例：SSF有服藥沒服藥造成的差異，SSE無法被服藥解釋的部分，均為隨機變異
+舉例
+- SSF：有服藥，沒服藥以及服用安慰劑三組，各組分別計算樣本數乘以組內平均與總體平均之平方差，然後加總即為SSF。
+- SSE：無法被服藥解釋的部分，均為隨機變異。
 
 - 平均因子變異
 
@@ -63,6 +67,11 @@ $$ F = \frac{MSF}{MSE} \sim F\_{k-1,\sum{n\_{i}}-k} $$
 ```R
 Wid<- aov(Petal.Width~Species, data=iris)
 summary(Wid)
+             Df Sum Sq Mean Sq F value Pr(>F)
+Species       2  80.41   40.21     960 <2e-16 ***
+Residuals   147   6.16    0.04
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 # 殘差常態性檢定
 shapiro.test(Wid$residuals)
