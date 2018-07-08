@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="掌握Git &amp;amp; Github 程式時光機udemy課程網址以下為課程筆記，內容版權為原課程所有。
+[TOC]Table of Contents 
+
+掌握Git &amp;amp; Github 程式時光機
+整體流程圖
+上傳流程
+產生本地端數據庫 (Local Repository)
+在工作目錄內新增"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Git 課程學習筆記"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="掌握Git &amp;amp; Github 程式時光機udemy課程網址以下為課程筆記，內容版權為原課程所有。
+[TOC]Table of Contents 
+
+掌握Git &amp;amp; Github 程式時光機
+整體流程圖
+上傳流程
+產生本地端數據庫 (Local Repository)
+在工作目錄內新增"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Git 課程學習筆記 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Git 課程學習筆記</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-02-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/git/">#git</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="掌握Git-amp-Github-程式時光機"><a href="#掌握Git-amp-Github-程式時光機" class="headerlink" title="掌握Git &amp; Github 程式時光機"></a>掌握Git &amp; Github 程式時光機</h1><p><a href="https://www.udemy.com/learninggit/learn/v4/overview" target="_blank" rel="noopener">udemy課程網址</a>以下為課程筆記，內容版權為原課程所有。</p>
+<p>[TOC]<br><!-- START doctoc generated TOC please keep comment here to allow auto update --><br><!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE --><br><strong>Table of Contents</strong> </p>
+<ul>
+<li><a href="#%E6%8E%8C%E6%8F%A1git--github-%E7%A8%8B%E5%BC%8F%E6%99%82%E5%85%89%E6%A9%9F">掌握Git &amp; Github 程式時光機</a><ul>
+<li><a href="#%E6%95%B4%E9%AB%94%E6%B5%81%E7%A8%8B%E5%9C%96">整體流程圖</a></li>
+<li><a href="#%E4%B8%8A%E5%82%B3%E6%B5%81%E7%A8%8B">上傳流程</a><ul>
+<li><a href="#%E7%94%A2%E7%94%9F%E6%9C%AC%E5%9C%B0%E7%AB%AF%E6%95%B8%E6%93%9A%E5%BA%AB-local-repository">產生本地端數據庫 (Local Repository)</a></li>
+<li><a href="#%E5%9C%A8%E5%B7%A5%E4%BD%9C%E7%9B%AE%E9%8C%84%E5%85%A7%E6%96%B0%E5%A2%9E%E6%AA%94%E6%A1%88">在工作目錄內新增檔案</a></li>
+<li><a href="#%E5%BE%9E%E5%B7%A5%E4%BD%9C%E7%9B%AE%E9%8C%84%E5%82%B3%E5%88%B0%E7%B4%A2%E5%BC%95">從工作目錄傳到索引</a></li>
+<li><a href="#%E6%8A%8A%E8%AE%8A%E6%9B%B4%E5%8A%A0%E5%85%A5%E5%88%B0%E6%9C%AC%E5%9C%B0%E5%84%B2%E5%AD%98%E5%BA%AB">把變更加入到本地儲存庫</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8D%E6%83%B3%E4%B8%8A%E5%82%B3%E8%AE%8A%E6%9B%B4%E4%BA%86">不想上傳變更了</a><ul>
+<li><a href="#%E5%BF%BD%E7%95%A5%E8%BF%BD%E8%B9%A4">忽略追蹤</a></li>
+<li><a href="#%E4%B8%8D%E8%BF%BD%E8%B9%A4%E5%8E%9F%E6%9C%AC%E5%9C%A8%E7%B4%A2%E5%BC%95%E4%B8%AD%E7%9A%84%E6%AA%94%E6%A1%88">不追蹤原本在索引中的檔案</a></li>
+<li><a href="#%E5%BE%9E%E6%9C%AC%E5%9C%B0%E5%84%B2%E5%AD%98%E5%BA%AB%E9%82%84%E5%8E%9F%E6%AA%94%E6%A1%88%E8%87%B3%E5%B7%A5%E4%BD%9C%E7%9B%AE%E9%8C%84">從本地儲存庫還原檔案至工作目錄</a></li>
+<li><a href="#%E9%82%84%E5%8E%9F%E5%B7%A5%E4%BD%9C%E7%9B%AE%E9%8C%84%E8%88%87%E7%B4%A2%E5%BC%95">還原工作目錄與索引</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E5%8F%8A%E9%81%A0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB%E4%B9%8B%E9%96%93%E7%9A%84%E6%93%8D%E4%BD%9C">本地及遠端儲存庫之間的操作</a><ul>
+<li><a href="#%E6%8A%8A%E6%9C%AC%E5%9C%B0%E5%84%B2%E5%AD%98%E5%BA%AB%E6%8E%A8%E5%88%B0%E9%81%A0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB">把本地儲存庫推到遠端儲存庫</a></li>
+<li><a href="#%E6%8A%8A%E9%81%A0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB%E8%A4%87%E8%A3%BD%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB">把遠端儲存庫複製到本地端儲存庫</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%86%E6%94%AF%E5%88%86%E6%94%AF%E5%88%86%E6%94%AF">分支分支分支</a><ul>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E7%9B%AE%E5%89%8D%E6%9C%89%E5%93%AA%E4%BA%9B%E5%88%86%E6%94%AF">查看目前有哪些分支</a></li>
+<li><a href="#%E5%9B%9E%E5%88%B0%E7%89%B9%E5%AE%9A%E7%9A%84commit">回到特定的commit</a></li>
+<li><a href="#%E5%89%B5%E7%AB%8B%E5%88%86%E6%94%AF">創立分支</a></li>
+</ul>
+</li>
+<li><a href="#fast-forward-%E5%90%88%E4%BD%B5%E5%88%86%E6%94%AF">fast forward 合併分支</a></li>
+<li><a href="#%E7%95%B6%E5%85%A9%E5%80%8B%E5%88%86%E6%94%AF%E7%94%A2%E7%94%9F%E8%A1%9D%E7%AA%81">當兩個分支產生衝突</a></li>
+<li><a href="#%E6%A8%99%E7%B1%A4">標籤</a></li>
+<li><a href="#%E6%9A%AB%E5%AD%98">暫存</a></li>
+<li><a href="#github%E5%9C%98%E9%9A%8A%E5%8D%94%E4%BD%9C">github團隊協作</a></li>
+<li><a href="#%E6%8B%89%E5%9B%9E%E9%81%A0%E7%AB%AF%E5%84%B2%E5%AD%98%E5%BA%AB%E7%9A%84%E8%AE%8A%E6%9B%B4-git-pull">拉回遠端儲存庫的變更 (git pull)</a></li>
+<li><a href="#%E6%8E%A8%E8%AE%8A%E6%9B%B4%E5%88%B0%E9%81%A0%E7%AB%AF%E6%95%B8%E6%93%9A%E5%BA%AB%E7%99%BC%E7%94%9F%E5%A4%B1%E6%95%97%E6%99%82%E5%85%88pull%E8%AE%8A%E6%9B%B4">推變更到遠端數據庫發生失敗時(先PULL變更)</a></li>
+<li><a href="#github-pages">Github pages</a></li>
+<li><a href="#%E5%B0%8F%E5%9E%8B%E5%9C%98%E9%9A%8A%E5%88%86%E6%94%AF%E5%8D%94%E4%BD%9C%E7%AF%87">小型團隊分支協作篇</a></li>
+<li><a href="#git-pull--git-fetch--git-merge">git pull = git fetch + git merge</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h2 id="整體流程圖"><a href="#整體流程圖" class="headerlink" title="整體流程圖"></a>整體流程圖</h2><p><img src="git.png" alt="git"></p>
+<h2 id="上傳流程"><a href="#上傳流程" class="headerlink" title="上傳流程"></a>上傳流程</h2><h3 id="產生本地端數據庫-Local-Repository"><a href="#產生本地端數據庫-Local-Repository" class="headerlink" title="產生本地端數據庫 (Local Repository)"></a>產生本地端數據庫 (Local Repository)</h3><p><code>git init</code> 產生本地端數據庫(local repository)</p>
+<h3 id="在工作目錄內新增檔案"><a href="#在工作目錄內新增檔案" class="headerlink" title="在工作目錄內新增檔案"></a>在工作目錄內新增檔案</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 產生index.html, index2.html檔案</span></span><br><span class="line">touch index.html</span><br><span class="line">touch index2.html</span><br><span class="line">mkdir css</span><br><span class="line">touch css/all.css</span><br><span class="line">touch index.html</span><br></pre></td></tr></table></figure>
+<h3 id="從工作目錄傳到索引"><a href="#從工作目錄傳到索引" class="headerlink" title="從工作目錄傳到索引"></a>從工作目錄傳到索引</h3><ul>
+<li>add changes from working directory to staging area</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#把所有的檔案加到索引裡面，代表的是開始要追蹤這些檔案的變更 </span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#看看有沒有加到索引裡面</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">#變更index2.html</span></span><br><span class="line">touch index2.html</span><br><span class="line"></span><br><span class="line"><span class="comment">#因為index2.html變更了，所以要告訴git要追蹤這個變更</span></span><br><span class="line">git add index2.html</span><br></pre></td></tr></table></figure>
+<h3 id="把變更加入到本地儲存庫"><a href="#把變更加入到本地儲存庫" class="headerlink" title="把變更加入到本地儲存庫"></a>把變更加入到本地儲存庫</h3><ul>
+<li>commit changes from staging area to local repository</li>
+<li>確認這些變更</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#commit之後會放到本地儲存庫</span></span><br><span class="line">git commit -m <span class="string">'update1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#檢視過去git的紀錄</span></span><br><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="不想上傳變更了"><a href="#不想上傳變更了" class="headerlink" title="不想上傳變更了"></a>不想上傳變更了</h2><h3 id="忽略追蹤"><a href="#忽略追蹤" class="headerlink" title="忽略追蹤"></a>忽略追蹤</h3><ul>
+<li><code>.gitignore</code></li>
+<li>不想追蹤的檔案，就放到.gitignore裡面</li>
+<li>可以參考 <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">github的.gitignore</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim .gitignore</span><br><span class="line"><span class="comment">#在.gitignore可以加入下列幾行，表示不追蹤那些檔案</span></span><br><span class="line">index.html</span><br><span class="line">*.html</span><br><span class="line">css/</span><br></pre></td></tr></table></figure>
+<h3 id="不追蹤原本在索引中的檔案"><a href="#不追蹤原本在索引中的檔案" class="headerlink" title="不追蹤原本在索引中的檔案"></a>不追蹤原本在索引中的檔案</h3><p>reset head in staging area</p>
+<p><code>git reset HEAD</code> ：不追蹤目前在staging area的檔案<br><code>git reset HEAD 檔案名稱</code> ：不追蹤staging area特定的檔案名稱</p>
+<h3 id="從本地儲存庫還原檔案至工作目錄"><a href="#從本地儲存庫還原檔案至工作目錄" class="headerlink" title="從本地儲存庫還原檔案至工作目錄"></a>從本地儲存庫還原檔案至工作目錄</h3><p>check out files from local repository<br>效果就是還原檔案</p>
+<p><code>git checkout 檔案名稱</code></p>
+<h3 id="還原工作目錄與索引"><a href="#還原工作目錄與索引" class="headerlink" title="還原工作目錄與索引"></a>還原工作目錄與索引</h3><p>檔案內容會跟最後一次commit保持一樣<br><code>git reset --hard</code></p>
+<h2 id="本地及遠端儲存庫之間的操作"><a href="#本地及遠端儲存庫之間的操作" class="headerlink" title="本地及遠端儲存庫之間的操作"></a>本地及遠端儲存庫之間的操作</h2><h3 id="把本地儲存庫推到遠端儲存庫"><a href="#把本地儲存庫推到遠端儲存庫" class="headerlink" title="把本地儲存庫推到遠端儲存庫"></a>把本地儲存庫推到遠端儲存庫</h3><p><code>git push</code></p>
+<h3 id="把遠端儲存庫複製到本地端儲存庫"><a href="#把遠端儲存庫複製到本地端儲存庫" class="headerlink" title="把遠端儲存庫複製到本地端儲存庫"></a>把遠端儲存庫複製到本地端儲存庫</h3><p><code>git clone https://github.com/username/repo_name.git</code></p>
+<h2 id="分支分支分支"><a href="#分支分支分支" class="headerlink" title="分支分支分支"></a>分支分支分支</h2><h3 id="查看目前有哪些分支"><a href="#查看目前有哪些分支" class="headerlink" title="查看目前有哪些分支"></a>查看目前有哪些分支</h3><p><code>git branch</code> 瀏覽目前有哪些分支</p>
+<p><strong>HEAD：目前所在位置的指標</strong></p>
+<h3 id="回到特定的commit"><a href="#回到特定的commit" class="headerlink" title="回到特定的commit"></a>回到特定的commit</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span>  <span class="comment"># 看看要回到哪個commit</span></span><br><span class="line">git checkout git_log_的前四碼 <span class="comment"># 可以回到特定的 commit</span></span><br><span class="line">git checkout master <span class="comment"># 復原</span></span><br></pre></td></tr></table></figure>
+<h3 id="創立分支"><a href="#創立分支" class="headerlink" title="創立分支"></a>創立分支</h3><p><code>git branch branch_name</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 創立分支</span></span><br><span class="line">git branch branch_name</span><br><span class="line"><span class="comment"># 編輯程式</span></span><br><span class="line">touch b.txt</span><br><span class="line">git add b.txt</span><br><span class="line">git commit -m <span class="string">'create b.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切換到 master</span></span><br><span class="line">git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切換到 branch_name</span></span><br><span class="line">git checkout branch_name</span><br></pre></td></tr></table></figure>
+<h2 id="fast-forward-合併分支"><a href="#fast-forward-合併分支" class="headerlink" title="fast forward 合併分支"></a>fast forward 合併分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> desktop</span><br><span class="line">mkdir project</span><br><span class="line"><span class="built_in">cd</span> project</span><br><span class="line">git init</span><br><span class="line">touch index.html</span><br><span class="line">git branch feature1</span><br><span class="line"><span class="built_in">echo</span> <span class="string">"&lt;head&gt;this is title&lt;/head&gt;"</span> &gt;&gt; index.html</span><br><span class="line"></span><br><span class="line">git add index.html</span><br><span class="line">git commit -m <span class="string">'add index.html'</span></span><br><span class="line"></span><br><span class="line">git checkout master</span><br><span class="line">git merge feature1</span><br><span class="line"><span class="comment"># now the content of index.html is the same between branch feature1 and master.</span></span><br></pre></td></tr></table></figure>
+<h2 id="當兩個分支產生衝突"><a href="#當兩個分支產生衝突" class="headerlink" title="當兩個分支產生衝突"></a>當兩個分支產生衝突</h2><p>master, feature1 同時更新，卻發生衝突<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> desktop</span><br><span class="line">mkdir project</span><br><span class="line">touch index.html</span><br><span class="line">vim index.html</span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">git branch feature1</span><br><span class="line">git checkout feature1</span><br><span class="line">vim index.html</span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;link rel=<span class="string">'sytlesheet'</span> href=<span class="string">'css/all.css'</span>&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line">git add index.html</span><br><span class="line">git commit index.html -m <span class="string">'add css to index.html in branch feature1'</span></span><br><span class="line"></span><br><span class="line">git chechout master</span><br><span class="line">cat index.html </span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line">vim index.html</span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;h1&gt; add a line&lt;/h1&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">git add index.html</span><br><span class="line">git commit index.html -m <span class="string">'add h1 to body in branch master'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 開始合併</span></span><br><span class="line"><span class="comment"># 在branch master中合併branch feature1</span></span><br><span class="line"><span class="comment"># 因為兩個分支改了同一行，所以會有衝突</span></span><br><span class="line">git merge feature1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 發現衝突的檔名</span></span><br><span class="line">vim index.html</span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">        &lt;h1&gt; add a line&lt;/h1&gt;</span><br><span class="line">=======</span><br><span class="line">        &lt;link rel=<span class="string">'sytlesheet'</span> href=<span class="string">'css/all.css'</span>&gt;</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature1</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改成</span></span><br><span class="line">&lt;head&gt;this is headline&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;h1&gt; add a line&lt;/h1&gt;</span><br><span class="line">        &lt;link rel=<span class="string">'sytlesheet'</span> href=<span class="string">'css/all.css'</span>&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;h1&gt; this is a <span class="built_in">test</span>&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">git add index.html</span><br><span class="line">git commit -m <span class="string">'mearge index.html in branch master and feature1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># master 有最後合併的結果</span></span><br><span class="line"><span class="comment"># feature1 則是原本feature1，不會因為merge而改變</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="標籤"><a href="#標籤" class="headerlink" title="標籤"></a>標籤</h2><p>對commit做標籤，未來可以快速回到那個標籤。</p>
+<p><code>git tag</code> 查詢標籤<br><code>git tag -n</code>查詢詳細標籤<br><code>git tag -d tag_name</code>刪除標籤<br><code>git tag tag_name</code>新增標籤<br><code>git tag -am &#39;備註內容&#39; tag_name</code>新增有備註的標籤 </p>
+<p><strong><code>git checkout tag_name</code></strong> 切換到標籤的commit </p>
+<h2 id="暫存"><a href="#暫存" class="headerlink" title="暫存"></a>暫存</h2><p>例如在工作目錄奮鬥了一陣子，卻臨時有需要先處理別的commit時，就先把目前的工作目錄的資料暫存起來。有需要將當前工作目錄中的修改帶到其他的分支時，也可以把當前工作目錄中的資料暫存起來，切換到其他的分支，然後還原暫存，如果檔案有衝突就處理衝突。<br><code>git stash</code>   暫時儲存當前目錄<br><code>git stash list</code>  瀏覽 git stash 列表<br><code>git stash pop</code>  還原暫存<br><code>git stash drop</code>  清除最新暫存<br><code>git stash clear</code>  清除全部暫存</p>
+<h2 id="github團隊協作"><a href="#github團隊協作" class="headerlink" title="github團隊協作"></a>github團隊協作</h2><p><code>git remote</code>  看看有那些遠端數據庫<br><code>git remote rename 原名稱 修改名稱</code> 修改遠端數據庫的名稱<br><code>git push origin master</code>  把commit送到遠端主機的某個分支。origin是預設的遠端主機名稱 master是分支名稱</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先在github上建立一個repository</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/usernamte/repository_name.git</span><br><span class="line"><span class="built_in">cd</span> repository_name</span><br><span class="line">touch index.html</span><br><span class="line">git add index.html</span><br><span class="line">git commit -m <span class="string">'add index.html'</span></span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">git branch issue1</span><br><span class="line">touch a.html</span><br><span class="line">git add a.html</span><br><span class="line">git commit -m <span class="string">'add a.html'</span></span><br><span class="line">git remote</span><br><span class="line">git remote origin github</span><br><span class="line">git push github issue1</span><br><span class="line"><span class="comment"># 把issue1分支也送到github上了</span></span><br></pre></td></tr></table></figure>
+<h2 id="拉回遠端儲存庫的變更-git-pull"><a href="#拉回遠端儲存庫的變更-git-pull" class="headerlink" title="拉回遠端儲存庫的變更 (git pull)"></a>拉回遠端儲存庫的變更 (git pull)</h2><ul>
+<li>同事A開始要做專案時，先用<code>git clone</code>把專案抓下來到本地數據庫接下來<code>git push origin</code>把開發的index.html上傳到github。</li>
+<li>同事B上班後先用<code>git pull</code>把github上面的資料抓下來，然後開始撰寫b.html，最後<code>git push</code>送上去github。</li>
+<li>同事A上班後，使用<code>git pull</code>把異動抓下來，檢視目前專案最新的狀態。</li>
+<li><code>git log</code>可以協助檢視<code>git pull</code>抓回哪些commit。</li>
+</ul>
+<h2 id="推變更到遠端數據庫發生失敗時-先PULL變更"><a href="#推變更到遠端數據庫發生失敗時-先PULL變更" class="headerlink" title="推變更到遠端數據庫發生失敗時(先PULL變更)"></a>推變更到遠端數據庫發生失敗時(先PULL變更)</h2><ul>
+<li>有些情況無法push，這時候需要pull再重新push</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在github上新建立一個遠端儲存庫</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事A下載遠端數據庫</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/username/reponame.git</span><br><span class="line"></span><br><span class="line">touch index.html</span><br><span class="line">git add index.html</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事B下載遠端數據庫</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/username/reponame.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事A 晚上勤奮開發</span></span><br><span class="line">touch index2.html</span><br><span class="line">git add index2.html</span><br><span class="line">git commin -m <span class="string">'add index2.html'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事B 隔天早上直接新增檔案</span></span><br><span class="line">touch a.html</span><br><span class="line">git add a.html</span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事B 在push時出錯了，git告訴你應該要先做git pull</span></span><br><span class="line">git pull</span><br><span class="line"><span class="comment"># 同事B 發現結果git pull時，git自動做了合併，之後同事B就可以push了</span></span><br><span class="line">git push origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 這個時候github上跟同事B的狀態就變成相同的</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 同事A 這個時候可以拉下來github上的遠端儲存庫</span></span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 這個時候同事A的狀態，就跟github上以及同事B相同了</span></span><br></pre></td></tr></table></figure>
+<h2 id="Github-pages"><a href="#Github-pages" class="headerlink" title="Github pages"></a>Github pages</h2><p>首先在github上面開個demosite網址是<a href="https://github.com/username/demosite.git" target="_blank" rel="noopener">https://github.com/username/demosite.git</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/usernmae/demosite.git</span><br><span class="line">touch index.html</span><br><span class="line">git add index.html</span><br><span class="line">git commit -m <span class="string">'add index.html'</span></span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>上去github，在settings裡面設定github pages</p>
+<h2 id="小型團隊分支協作篇"><a href="#小型團隊分支協作篇" class="headerlink" title="小型團隊分支協作篇"></a>小型團隊分支協作篇</h2><ul>
+<li>團隊開發branch的注意事項</li>
+<li><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">參考網址</a></li>
+</ul>
+<h2 id="git-pull-git-fetch-git-merge"><a href="#git-pull-git-fetch-git-merge" class="headerlink" title="git pull = git fetch + git merge"></a>git pull = git fetch + git merge</h2><p><code>git fetch origin branch_name</code> 此時會多一個 FETCH_HEAD 的分支，這個就是遠端數據庫的分支，可以等到審視完沒問題後，再合併 FETCH_HEAD。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="本文是computing for data analysis課程的摘要。也有一些上課的心得。
+Data types and Basic Oprationsbasic or ‘atomic’ classes
+character
+numeric
+integer
+complex
+logical(True/"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Computing for data analysis (01) 的筆記"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="本文是computing for data analysis課程的摘要。也有一些上課的心得。
+Data types and Basic Oprationsbasic or ‘atomic’ classes
+character
+numeric
+integer
+complex
+logical(True/"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Computing for data analysis (01) 的筆記 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Computing for data analysis (01) 的筆記</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-02-07
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/R-class/">#R, class</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本文是computing for data analysis課程的摘要。也有一些上課的心得。</p>
+<h2 id="Data-types-and-Basic-Oprations"><a href="#Data-types-and-Basic-Oprations" class="headerlink" title="Data types and Basic Oprations"></a>Data types and Basic Oprations</h2><h3 id="basic-or-‘atomic’-classes"><a href="#basic-or-‘atomic’-classes" class="headerlink" title="basic or ‘atomic’ classes"></a>basic or ‘atomic’ classes</h3><ul>
+<li>character</li>
+<li>numeric</li>
+<li>integer</li>
+<li>complex</li>
+<li>logical(True/False)</li>
+</ul>
+<p><strong>The most basic object is a vector</strong></p>
+<h3 id="Numbers"><a href="#Numbers" class="headerlink" title="Numbers"></a>Numbers</h3><ul>
+<li>as numeric objects</li>
+<li>1 is a numeric object; 1L is an integer</li>
+<li>NaN represent undefined value: 0/0</li>
+<li>Inf (infinity): 1/0 = Inf and 1/Inf = 0 </li>
+</ul>
+<h3 id="Attributes-R-objects"><a href="#Attributes-R-objects" class="headerlink" title="Attributes R objects"></a>Attributes R objects</h3><ul>
+<li>names, dimnames</li>
+<li>dimensions</li>
+<li>class</li>
+<li>length</li>
+<li>other user-definded attributes</li>
+</ul>
+<h3 id="Matrices"><a href="#Matrices" class="headerlink" title="Matrices"></a>Matrices</h3><ul>
+<li>vectors with a dimension attribute. dimension attribute is an ieteger vetor</li>
+<li></li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; m&lt;-matrix(nrow=<span class="number">2</span>,ncol=<span class="number">3</span>)</span><br><span class="line">&gt; dim(m)</span><br><span class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">3</span></span><br><span class="line">&gt; attributes(m)</span><br><span class="line">$dim</span><br><span class="line">[<span class="number">1</span>] <span class="number">2</span> <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- list(<span class="number">1</span>,<span class="string">"a"</span>, <span class="literal">TRUE</span>, <span class="number">1</span> + <span class="number">4i</span>)</span><br><span class="line">&gt; x</span><br><span class="line">[[<span class="number">1</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="string">"a"</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">3</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="literal">TRUE</span></span><br><span class="line"></span><br><span class="line">[[<span class="number">4</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> + <span class="number">4i</span></span><br></pre></td></tr></table></figure>
+<h3 id="NA"><a href="#NA" class="headerlink" title="NA"></a>NA</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; is.na(NAN)</span><br><span class="line">[<span class="number">1</span>] <span class="literal">TRUE</span></span><br><span class="line">&gt; is.nan(<span class="literal">NA</span>)</span><br><span class="line">[<span class="number">1</span>] <span class="literal">FALSE</span></span><br></pre></td></tr></table></figure>
+<h3 id="Data-Frames"><a href="#Data-Frames" class="headerlink" title="Data Frames"></a>Data Frames</h3><ul>
+<li>創建data frame 通常用read.table(), read.csv()</li>
+<li>或者由matrix來創建 data.matrix()</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- data.frame(foo=<span class="number">1</span>:<span class="number">4</span>, bar=c(<span class="literal">T</span>,<span class="literal">T</span>,<span class="literal">F</span>,<span class="literal">F</span>))</span><br><span class="line">&gt; nrow(x)</span><br><span class="line">[<span class="number">1</span>] <span class="number">4</span></span><br><span class="line">&gt; ncol(x)</span><br><span class="line">[<span class="number">1</span>] <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Data-Type-and-Basic-Operations"><a href="#Data-Type-and-Basic-Operations" class="headerlink" title="Data Type and Basic Operations"></a>Data Type and Basic Operations</h2><h3 id="subsetting-list"><a href="#subsetting-list" class="headerlink" title="subsetting list"></a>subsetting list</h3><ul>
+<li>[ 永遠會傳回跟原本物件一樣class的物件</li>
+<li>[[ 用來截取list或data frame的元素，回傳的物件不一定是list或data frame</li>
+<li>$ 用name來截取list或data frame的元素，很像是[[</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- list(foo=<span class="number">1</span>:<span class="number">4</span>, bar=<span class="number">0.6</span>)</span><br><span class="line">&gt; x[<span class="number">1</span>] <span class="comment"># 回傳一個list</span></span><br><span class="line">$foo</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">&gt; x[[<span class="number">1</span>]] <span class="comment"># 回傳vector</span></span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line">&gt; x$bar</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.6</span></span><br><span class="line">&gt; x[[<span class="string">"bar"</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.6</span></span><br><span class="line">&gt; x[<span class="string">"bar"</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">0.6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- list(foo = <span class="number">1</span>:<span class="number">4</span>, bar = <span class="number">0.6</span>, baz = <span class="string">"hello"</span>)</span><br><span class="line">&gt; x[c(<span class="number">1</span>,<span class="number">3</span>)]</span><br><span class="line">$foo</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">$baz</span><br><span class="line">[<span class="number">1</span>] <span class="string">"hello"</span></span><br></pre></td></tr></table></figure>
+<p><strong>Subsetting Nestined Elements of a List</strong></p>
+<ul>
+<li><strong>[[ take an integer sequnece</strong></li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- list(a = list(<span class="number">10</span>,<span class="number">12</span>,<span class="number">14</span>), b = c(<span class="number">3.14</span>, <span class="number">2.81</span>))</span><br><span class="line">&gt; x[[c(<span class="number">1</span>,<span class="number">3</span>)]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">14</span></span><br><span class="line">&gt; x[[<span class="number">1</span>]][[<span class="number">3</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">14</span></span><br><span class="line">&gt; x[[c(<span class="number">2</span>,<span class="number">1</span>)]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">3.14</span></span><br><span class="line">&gt; x[[<span class="number">2</span>]][[<span class="number">1</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">3.14</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&gt; x1 = <span class="number">1</span>:<span class="number">4</span>; x2 = <span class="number">1</span>:<span class="number">4</span> + <span class="number">10</span>; x3 = <span class="number">1</span>:<span class="number">4</span> + <span class="number">20</span>; x4 = <span class="number">1</span>:<span class="number">4</span> + <span class="number">30</span></span><br><span class="line">&gt; y &lt;- list( ya = list(x1,x2) , yb = list(x3,x4) )</span><br><span class="line">&gt; y</span><br><span class="line">$ya</span><br><span class="line">$ya[[<span class="number">1</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">$ya[[<span class="number">2</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span></span><br><span class="line"></span><br><span class="line">$yb</span><br><span class="line">$yb[[<span class="number">1</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">$yb[[<span class="number">2</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">34</span></span><br><span class="line"></span><br><span class="line">&gt; y[[<span class="number">1</span>]][[<span class="number">2</span>]][[<span class="number">3</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">13</span></span><br><span class="line"></span><br><span class="line">&gt; y[[c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">13</span></span><br><span class="line"></span><br><span class="line">&gt; y$ya[[<span class="number">2</span>]]</span><br><span class="line">[<span class="number">1</span>] <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span></span><br><span class="line">&gt; y$ya[[<span class="number">2</span>]][<span class="number">3</span>]</span><br><span class="line">[<span class="number">1</span>] <span class="number">13</span></span><br></pre></td></tr></table></figure>
+<h3 id="Removing-NA-values"><a href="#Removing-NA-values" class="headerlink" title="Removing NA values"></a>Removing NA values</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; airquality[<span class="number">1</span>:<span class="number">6</span>,]</span><br><span class="line">&gt; good &lt;- complete.case(airquality)</span><br><span class="line">&gt; airquality[good,][<span class="number">1</span>:<span class="number">6</span>,]</span><br></pre></td></tr></table></figure>
+<h2 id="Vectorized-Operations"><a href="#Vectorized-Operations" class="headerlink" title="Vectorized Operations"></a>Vectorized Operations</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; x &lt;- matrix(<span class="number">1</span>:<span class="number">4</span>, <span class="number">2</span>, <span class="number">2</span>); y &lt;- matrix(rep(<span class="number">10</span>,<span class="number">4</span>), <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">&gt; x * y</span><br><span class="line">&gt; x / y</span><br><span class="line"><span class="comment"># true matrix multiplication</span></span><br><span class="line">&gt; x %*% y</span><br></pre></td></tr></table></figure>
+<h2 id="Reading-and-Writing-Data"><a href="#Reading-and-Writing-Data" class="headerlink" title="Reading and Writing Data"></a>Reading and Writing Data</h2><p>reading</p>
+<ul>
+<li>read.table, read.csv</li>
+<li>readLines, 從文字檔案讀進來</li>
+<li>source, 讀R code files</li>
+<li>dget, 讀R code files</li>
+<li>load, 讀入廚吋的workspaecs</li>
+<li>unserialize, 從binary form讀入R物件</li>
+</ul>
+<p>writing</p>
+<ul>
+<li>write.table,</li>
+<li>writeLines</li>
+<li>dump</li>
+<li>dput</li>
+<li>save</li>
+<li>serialize</li>
+</ul>
+<p>使用 read.tables讀大檔時，稍微計算記憶體會不會爆炸掉，指定<code>colClasses</code>會讀得比較快，如果檔案裡面沒有註解，那就把<code>comment.char=&quot;&quot;</code>，這樣也會比較快</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 讀前100行看看型態</span></span><br><span class="line">&gt; initial &lt;- read.table(<span class="string">"datatable.txt"</span>, nrows = <span class="number">100</span>)</span><br><span class="line">&gt; classes &lt;- sapply(initial, class)</span><br><span class="line">&gt; tabAll &lt;- read.table(<span class="string">"datatable.txt"</span>, colClasses = classes)</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="本文主要參考Cumulative Gains  and Lift Charts寫成，再加以進行重點摘要。
+
+Lift 可以用來衡量預測模型的效率，可以告訴我們，在有模型的情況下，會比沒有模型好多少倍。
+Cumulative Gains Chart以及Lift Chat是用來幫助我們衡量的視覺化模型。"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Cumulative Gains Chart and Lift Chart"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="本文主要參考Cumulative Gains  and Lift Charts寫成，再加以進行重點摘要。
+
+Lift 可以用來衡量預測模型的效率，可以告訴我們，在有模型的情況下，會比沒有模型好多少倍。
+Cumulative Gains Chart以及Lift Chat是用來幫助我們衡量的視覺化模型。"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Cumulative Gains Chart and Lift Chart - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Cumulative Gains Chart and Lift Chart</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-02-18
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/lift/">#lift</a> <a href="/tags/cumulative-gain/">#cumulative gain</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本文主要參考<a href="http://www2.cs.uregina.ca/~dbd/cs831/notes/lift_chart/lift_chart.html" target="_blank" rel="noopener">Cumulative Gains  and Lift Charts</a>寫成，再加以進行重點摘要。</p>
+<ul>
+<li>Lift 可以用來衡量預測模型的效率，可以告訴我們，在有模型的情況下，會比沒有模型好多少倍。</li>
+<li>Cumulative Gains Chart以及Lift Chat是用來幫助我們衡量的視覺化模型。</li>
+<li>這兩張圖都有baseline及lift curve，如果這兩條線圍起來的面積越大，那模型的效果也越佳。</li>
+</ul>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1"></a>Example 1</h2><p>假設向一個群體內所有人發傳單，會有20%的人有正向的回應，發傳單的成本是$1。</p>
+<table>
+<thead>
+<tr>
+<th>Cost($)</th>
+<th>Total Customers Contacted</th>
+<th>Positive Responses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100,000</td>
+<td>100,000</td>
+<td>20,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>如果我們使用模型，則可以更好的發傳單計畫。</strong></p>
+<p>例如第一列，我們用模型找出10,000個人，只發傳單給他們，會有6000人有正向的回覆。其他列以此類推。最後一列表示的是，如果我們發傳單給所有的人，一樣會有20%的人回覆，模型不會讓更多人回覆，只是有個<strong>更聰明的找人方法</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>Cost($)</th>
+<th>Total Customers Contacted</th>
+<th>Positive Responses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10000</td>
+<td>10000</td>
+<td>6000</td>
+</tr>
+<tr>
+<td>20000</td>
+<td>20000</td>
+<td>10000</td>
+</tr>
+<tr>
+<td>30000</td>
+<td>30000</td>
+<td>13000</td>
+</tr>
+<tr>
+<td>40000</td>
+<td>40000</td>
+<td>15800</td>
+</tr>
+<tr>
+<td>50000</td>
+<td>50000</td>
+<td>17000</td>
+</tr>
+<tr>
+<td>60000</td>
+<td>60000</td>
+<td>18000</td>
+</tr>
+<tr>
+<td>70000</td>
+<td>70000</td>
+<td>18800</td>
+</tr>
+<tr>
+<td>80000</td>
+<td>80000</td>
+<td>19400</td>
+</tr>
+<tr>
+<td>90000</td>
+<td>90000</td>
+<td>19800</td>
+</tr>
+<tr>
+<td>100000</td>
+<td>10000</td>
+<td>20000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Cumulative-Gains-Chart"><a href="#Cumulative-Gains-Chart" class="headerlink" title="Cumulative Gains Chart"></a>Cumulative Gains Chart</h3><ul>
+<li>y軸代表的是正面回覆的比例，分母是整個群體正面回覆的人數，這個例子是20,000</li>
+<li>x軸表示的發傳單的數量占群體總數的比例</li>
+<li><strong>Baseline</strong>：沒有採用模型，隨機從群體挑選出 p% 的人發傳單，那有正面回應的人佔整個群體正面回覆的人數，自然就是 p%。</li>
+<li><strong>Lift Curve</strong>：採用模型挑選要發給哪些人傳單。y值的分子代表模型挑出來發傳單且有正面回應的人數，分母是整個群體正面回覆的人數。</li>
+</ul>
+<p><img src="cumulative_gain.png" alt="cumulative_gain"></p>
+<p>建立範例資料<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">baseline &lt;- data.frame(</span><br><span class="line">  cost=seq(<span class="number">0</span>,<span class="number">100000</span>,by=<span class="number">10000</span>), </span><br><span class="line">  cus_contacted = seq(<span class="number">0</span>,<span class="number">100000</span>,by=<span class="number">10000</span>), </span><br><span class="line">  positive_resp = seq(<span class="number">0</span>,<span class="number">100000</span>,by=<span class="number">10000</span>) * <span class="number">0.2</span>)</span><br><span class="line">model_result &lt;- data.frame( </span><br><span class="line">  cost = seq(<span class="number">0</span>,<span class="number">100000</span>,by=<span class="number">10000</span>), </span><br><span class="line">  cus_contacted = seq(<span class="number">0</span>,<span class="number">100000</span>,by=<span class="number">10000</span>),</span><br><span class="line">  positive_resp = c(<span class="number">0</span>,<span class="number">6000</span>,<span class="number">10000</span>,<span class="number">13000</span>,<span class="number">15800</span>,<span class="number">17000</span>,<span class="number">18000</span>,<span class="number">18800</span>,<span class="number">19400</span>,<span class="number">19800</span>,<span class="number">20000</span>))</span><br></pre></td></tr></table></figure></p>
+<p>建立 Cumulative Gain Chart<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">plot(c(<span class="number">0</span>,<span class="number">100</span>),c(<span class="number">0</span>,<span class="number">100</span>), type=<span class="string">"n"</span>, xlab = <span class="string">"% Customers Contacted"</span>, ylab=<span class="string">"% Posittive Responses"</span>,main = <span class="string">"Cumulative Gains Chart"</span>)</span><br><span class="line">axis(<span class="number">1</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">axis(<span class="number">2</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>),</span><br><span class="line">     baseline$positive_resp/(<span class="number">20000</span>/<span class="number">100</span>),</span><br><span class="line">     type=<span class="string">'o'</span>,  col=<span class="string">'red'</span>, pch=<span class="number">2</span>)</span><br><span class="line"><span class="comment"># 當向p%的客戶發傳單時，會有x人回傳，gain就是x除以全部發且會回傳的人</span></span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>),</span><br><span class="line">      model_result$positive_resp/(<span class="number">20000</span>/<span class="number">100</span>),</span><br><span class="line">      type=<span class="string">'o'</span>, col=<span class="string">'blue'</span>,pch=<span class="number">1</span>)</span><br><span class="line">abline(h=seq(<span class="number">10</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">legend(<span class="string">"bottomright"</span>, c(<span class="string">"baseline"</span>, <span class="string">"model prediction"</span>), lty = c(<span class="number">1</span>,<span class="number">1</span>), col=c(<span class="string">"red"</span>,<span class="string">"blue"</span>))</span><br></pre></td></tr></table></figure></p>
+<h3 id="Lift-Chart"><a href="#Lift-Chart" class="headerlink" title="Lift Chart"></a>Lift Chart</h3><ul>
+<li>顯示出因為模型而提升了多少效率(Lift)</li>
+<li>計算有模型與沒有模型有正向回覆的人數之比</li>
+<li>例如：發傳單給佔群體10%的人數，如果使用模型，正向回覆率為30%，亦即正向回覆6000人，而整個群體的正向回覆有20000人，故6000/20000 = 30%。但若沒有使用模型，正向回覆率為10%。所以lift值為30%/10% = 3</li>
+<li>也就是說，如果用模型的結果發傳單給佔10%群體的人們，我們可能得到回覆會比沒有模型多三倍。</li>
+</ul>
+<p><img src="lift.png" alt="lift"></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Lift Chart</span></span><br><span class="line">plot(c(<span class="number">10</span>,<span class="number">100</span>),c(<span class="number">0</span>, <span class="number">3.5</span>), type=<span class="string">"n"</span>, xlab = <span class="string">"% Customers Contacted"</span>, ylab=<span class="string">"Lift"</span> ,main = <span class="string">"Lift"</span>)</span><br><span class="line">axis(<span class="number">1</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">axis(<span class="number">2</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>), </span><br><span class="line">      baseline$positive_resp/baseline$positive_resp, </span><br><span class="line">      type=<span class="string">'o'</span>,  col=<span class="string">'red'</span>, pch=<span class="number">2</span>)</span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>),</span><br><span class="line">      model_result$positive_resp/baseline$positive_resp, </span><br><span class="line">      type=<span class="string">'o'</span>, col=<span class="string">'blue'</span>,pch=<span class="number">1</span>)</span><br><span class="line">abline(h=seq(<span class="number">0</span>,<span class="number">3</span>,by=<span class="number">0.5</span>))</span><br><span class="line">legend(<span class="string">"topright"</span>, c(<span class="string">"baseline"</span>, <span class="string">"model prediction"</span>), lty = c(<span class="number">1</span>,<span class="number">1</span>), col=c(<span class="string">"red"</span>,<span class="string">"blue"</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="Example-2：模型案例"><a href="#Example-2：模型案例" class="headerlink" title="Example 2：模型案例"></a>Example 2：模型案例</h2><p>模型如下<br>$$ Y = 100 - Age(x) $$</p>
+<p>資料如下</p>
+<table>
+<thead>
+<tr>
+<th>Cumtomer</th>
+<th>Age</th>
+<th>Actual Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alan</td>
+<td>39</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>21</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Jessica</td>
+<td>25</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Elizabeth</td>
+<td>30</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Hilary</td>
+<td>19</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Fred</td>
+<td>48</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Alex</td>
+<td>12</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Margot</td>
+<td>51</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Sean</td>
+<td>65</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Chris</td>
+<td>42</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Philip</td>
+<td>20</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Catherine</td>
+<td>23</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>13</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Erin</td>
+<td>35</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Trent</td>
+<td>55</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Preston</td>
+<td>25</td>
+<td>N</td>
+</tr>
+<tr>
+<td>John</td>
+<td>76</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Nancy</td>
+<td>24</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Kim</td>
+<td>31</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Laura</td>
+<td>29</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li><strong>計算每個欄位的Y值</strong></li>
+<li><strong>依照Y值排列</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Cumtomer</th>
+<th>Y</th>
+<th>Actual Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alex</td>
+<td>88</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Amy</td>
+<td>87</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Hilary</td>
+<td>81</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Philip</td>
+<td>80</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>79</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Catherine</td>
+<td>77</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Nancy</td>
+<td>76</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Jessica</td>
+<td>75</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Preston</td>
+<td>75</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Laura</td>
+<td>71</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Elizabeth</td>
+<td>70</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Kim</td>
+<td>69</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Erin</td>
+<td>65</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>Alan</td>
+<td>61</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Chris</td>
+<td>58</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Fred</td>
+<td>52</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Margot</td>
+<td>49</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Trent</td>
+<td>45</td>
+<td>N</td>
+</tr>
+<tr>
+<td>Sean</td>
+<td>35</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>John</td>
+<td>24</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<h3 id="依據分割點，計算回覆率"><a href="#依據分割點，計算回覆率" class="headerlink" title="依據分割點，計算回覆率"></a>依據分割點，計算回覆率</h3><p>Respose Rate = Number of Responses / Total Number of Responses</p>
+<table>
+<thead>
+<tr>
+<th>#(Cumtomers contacted)</th>
+<th>Number of Response</th>
+<th>Response Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>10%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>30%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>4</td>
+<td>40%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6</td>
+<td>60%</td>
+</tr>
+<tr>
+<td>10</td>
+<td>7</td>
+<td>70%</td>
+</tr>
+<tr>
+<td>12</td>
+<td>8</td>
+<td>80%</td>
+</tr>
+<tr>
+<td>14</td>
+<td>9</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>16</td>
+<td>9</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>18</td>
+<td>9</td>
+<td>90%</td>
+</tr>
+<tr>
+<td>20</td>
+<td>10</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Cumulative-Gains-Chart-1"><a href="#Cumulative-Gains-Chart-1" class="headerlink" title="Cumulative Gains Chart"></a>Cumulative Gains Chart</h3><p>資料整理</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">names &lt;- c(<span class="string">"Alan"</span>,<span class="string">"Bob"</span>, <span class="string">"Jessica"</span>, <span class="string">"Elizabeth"</span>, <span class="string">"Hilary"</span>, <span class="string">"Fred"</span>,<span class="string">"Alex"</span>, <span class="string">"Margot"</span>, <span class="string">"Sean"</span>,</span><br><span class="line">           <span class="string">"Chris"</span>, <span class="string">"Philip"</span>, <span class="string">"Catherine"</span>, <span class="string">"Amy"</span>, <span class="string">"Erin"</span>, <span class="string">"Trent"</span>, <span class="string">"Preston"</span>, <span class="string">"John"</span>, <span class="string">"Nancy"</span>,</span><br><span class="line">           <span class="string">"Kim"</span>,<span class="string">"Laura"</span>)</span><br><span class="line">age &lt;- c(<span class="number">39</span>,<span class="number">21</span>,<span class="number">25</span>,<span class="number">30</span>,<span class="number">19</span>,<span class="number">48</span>,<span class="number">12</span>,<span class="number">51</span>,<span class="number">65</span>,<span class="number">42</span>,<span class="number">20</span>,<span class="number">23</span>,<span class="number">13</span>,<span class="number">35</span>,<span class="number">55</span>,<span class="number">25</span>,<span class="number">76</span>,<span class="number">24</span>,<span class="number">31</span>,<span class="number">29</span>)</span><br><span class="line">actual_resp &lt;- as.factor(c(<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"Y"</span>,<span class="string">"Y"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"N"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>,<span class="string">"N"</span>,<span class="string">"Y"</span>))</span><br><span class="line">exp2 &lt;- data.frame(names,age,actual_resp)</span><br><span class="line"></span><br><span class="line">exp2$y &lt;- <span class="number">100</span>-exp2$age</span><br><span class="line"></span><br><span class="line">exp2[order(-exp2$y),]</span><br><span class="line"></span><br><span class="line">total_resp &lt;- table(actual_resp)[<span class="string">"Y"</span>]</span><br><span class="line">num_of_resp &lt;- rep(-<span class="number">1</span>,<span class="number">10</span>)</span><br><span class="line">resp_rate &lt;- rep(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"><span class="keyword">for</span>( i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>) &#123;</span><br><span class="line">  num_of_resp[i]&lt;-table(exp2[order(-exp2$y),<span class="string">"actual_resp"</span>][<span class="number">1</span>:(<span class="number">2</span>*i)])[<span class="string">"Y"</span>]</span><br><span class="line">  resp_rate[i] &lt;- (num_of_resp[i] / total_resp) * <span class="number">100</span></span><br><span class="line">&#125;</span><br><span class="line">cumu_data &lt;- data.frame(total_cus_contacted=seq(<span class="number">2</span>,<span class="number">20</span>,by=<span class="number">2</span>), num_of_resp, resp_rate)</span><br></pre></td></tr></table></figure>
+<p><strong>製作Cumulative Gain Chart</strong><br><img src="exp2_cumulative_gain.png" alt=""><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Cumulative Gains Chart</span></span><br><span class="line">baseline &lt;- seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>)</span><br><span class="line">plot(c(<span class="number">0</span>,<span class="number">100</span>),c(<span class="number">0</span>,<span class="number">100</span>), type=<span class="string">"n"</span>, xlab = <span class="string">"% Customers Contacted"</span>, ylab=<span class="string">"% Posittive Responses"</span>,main = <span class="string">"Cumulative Gains Chart"</span>)</span><br><span class="line">axis(<span class="number">1</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">axis(<span class="number">2</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br></pre></td></tr></table></figure></p>
+<p><strong>製作Lift Chart</strong></p>
+<p><img src="exp2_lift.png" alt=""><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Lift Chart</span></span><br><span class="line">plot(c(<span class="number">10</span>,<span class="number">100</span>),c(<span class="number">0.6</span>, <span class="number">1.6</span>), type=<span class="string">"n"</span>, xlab = <span class="string">"% Customers Contacted"</span>, ylab=<span class="string">"Lift"</span> ,main = <span class="string">"Lift"</span>)</span><br><span class="line">axis(<span class="number">1</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">axis(<span class="number">2</span>, seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>))</span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>), </span><br><span class="line">      baseline/baseline, </span><br><span class="line">      type=<span class="string">'o'</span>,  col=<span class="string">'red'</span>, pch=<span class="number">2</span>)</span><br><span class="line">lines(x = seq(<span class="number">0</span>,<span class="number">100</span>,by=<span class="number">10</span>),</span><br><span class="line">      c(<span class="number">0</span>,cumu_data$resp_rate)/baseline,</span><br><span class="line">      type=<span class="string">'o'</span>, col=<span class="string">'blue'</span>,pch=<span class="number">1</span>)</span><br><span class="line">abline(h=seq(<span class="number">0.6</span>,<span class="number">1.6</span>,by=<span class="number">0.1</span>))</span><br><span class="line">legend(<span class="string">"topright"</span>, c(<span class="string">"baseline"</span>, <span class="string">"model prediction"</span>), lty = c(<span class="number">1</span>,<span class="number">1</span>), col=c(<span class="string">"red"</span>,<span class="string">"blue"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>參考資料<br><a href="http://www2.cs.uregina.ca/~dbd/cs831/notes/lift_chart/lift_chart.html" target="_blank" rel="noopener">Cumulative Gains  and Lift Charts</a><br><a href="https://www.ibm.com/support/knowledgecenter/en/SS3RA7_15.0.0/com.ibm.spss.modeler.help/treebuilder_gains_charts.htm" target="_blank" rel="noopener">SPSS的Lift Chart</a><br><a href="http://www.cc.ntu.edu.tw/chinese/epaper/0030/20140920_3005.html" target="_blank" rel="noopener">一分鐘建立與評估資料探勘模型</a></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

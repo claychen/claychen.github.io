@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="本文為閱讀A successful Git branching model的摘要
+
+
+Table of Contents
+
+整體概況
+feature branch
+產生 feature 分支
+合併回去 develop
+結束 feature 分支
+
+
+release branch
+產生 release"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Git分支模型"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="本文為閱讀A successful Git branching model的摘要
+
+
+Table of Contents
+
+整體概況
+feature branch
+產生 feature 分支
+合併回去 develop
+結束 feature 分支
+
+
+release branch
+產生 release"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Git分支模型 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Git分支模型</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-02-05
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/git/">#git</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>本文為閱讀<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">A successful Git branching model</a>的摘要</p>
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="#%E6%95%B4%E9%AB%94%E6%A6%82%E6%B3%81">整體概況</a></li>
+<li><a href="#feature-branch">feature branch</a><ul>
+<li><a href="#%E7%94%A2%E7%94%9F-feature-%E5%88%86%E6%94%AF">產生 feature 分支</a></li>
+<li><a href="#%E5%90%88%E4%BD%B5%E5%9B%9E%E5%8E%BB-develop">合併回去 develop</a></li>
+<li><a href="#%E7%B5%90%E6%9D%9F-feature-%E5%88%86%E6%94%AF">結束 feature 分支</a></li>
+</ul>
+</li>
+<li><a href="#release-branch">release branch</a><ul>
+<li><a href="#%E7%94%A2%E7%94%9F-release-%E5%88%86%E6%94%AF">產生 release 分支</a></li>
+<li><a href="#%E7%B5%90%E6%9D%9F-release-%E5%88%86%E6%94%AF">結束 release 分支</a></li>
+</ul>
+</li>
+<li><a href="#hotfix-%E5%88%86%E6%94%AF">hotfix 分支</a><ul>
+<li><a href="#%E7%94%A2%E7%94%9F-hotfix-%E5%88%86%E6%94%AF">產生 hotfix 分支</a></li>
+<li><a href="#%E7%B5%90%E6%9D%9F-hotfix-%E5%88%86%E6%94%AF">結束 hotfix 分支</a></li>
+</ul>
+</li>
+</ul>
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<h2 id="整體概況"><a href="#整體概況" class="headerlink" title="整體概況"></a>整體概況</h2><p><img src="git-model.png" alt="git-model"></p>
+<p>遠端儲存庫的分支，產品在就會一直在的分支</p>
+<ul>
+<li>master</li>
+<li>develop</li>
+</ul>
+<p><img src="main-branches.png" alt="main-branches"></p>
+<p>origin/master</p>
+<ul>
+<li>HEAD reflects product ready state</li>
+<li>永遠存在的分支</li>
+<li>HEAD指向最新產品發行版</li>
+</ul>
+<p>origin/develop</p>
+<ul>
+<li>HEAD reflects a state with the latest delivered development changes for the next release.</li>
+<li>永遠存在的分支</li>
+<li>HEAD指向下個正式版的最新開發版 </li>
+</ul>
+<p>支持develpe, master的分支</p>
+<ul>
+<li>feature</li>
+<li>release</li>
+<li>hotfix</li>
+</ul>
+<h2 id="feature-branch"><a href="#feature-branch" class="headerlink" title="feature branch"></a>feature branch</h2><ul>
+<li>從develop開過來的分支</li>
+<li>一定要合併回去develop，或者丟棄這個feature分支</li>
+<li>feature branch name不可以是master, develop, release-<em>, hotfix-</em></li>
+<li>feature通常指存在於開發者的儲存庫，不會存放在origin儲存庫</li>
+</ul>
+<p><img src="fb.png" alt="fb"></p>
+<h3 id="產生-feature-分支"><a href="#產生-feature-分支" class="headerlink" title="產生 feature 分支"></a>產生 feature 分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git checkout -b myfeature develop</span><br><span class="line"><span class="comment"># 這時會切換到新分支 "myfeature"</span></span><br></pre></td></tr></table></figure>
+<h3 id="合併回去-develop"><a href="#合併回去-develop" class="headerlink" title="合併回去 develop"></a>合併回去 develop</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">＃ 切換倒develop分支</span><br><span class="line">git checkout develop</span><br><span class="line"></span><br><span class="line"><span class="comment"># feature分支合併至develop分支</span></span><br><span class="line"><span class="comment"># --no-ff 表就算可以用fast-forward合併，但該旗標會讓合併時永遠會產生一個新的commit</span></span><br><span class="line"><span class="comment"># 這樣做的好處是避免失去該feature分支的commit資訊。</span></span><br><span class="line"><span class="comment"># 當要回復feature時很方便。</span></span><br><span class="line">git merge --no-ff myfeature</span><br></pre></td></tr></table></figure>
+<p><img src="merge-without-ff.png" alt="merge-without-ff"></p>
+<h3 id="結束-feature-分支"><a href="#結束-feature-分支" class="headerlink" title="結束 feature 分支"></a>結束 feature 分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 砍掉 feature 分支</span></span><br><span class="line">git branch -d myfeature</span><br><span class="line"></span><br><span class="line"><span class="comment"># 推送develop分支到origin</span></span><br><span class="line">git push origin develop</span><br></pre></td></tr></table></figure>
+<h2 id="release-branch"><a href="#release-branch" class="headerlink" title="release branch"></a>release branch</h2><ul>
+<li>從develop開出來的分支</li>
+<li>一定要合併回去develop以及master</li>
+<li>名字得取法是release-xxx</li>
+<li>執行產品打磨作業</li>
+<li>當develop快要完成了，所有要發行的feature分支會合併到develop分支，這時再分出release分支</li>
+<li>在產品發布前做修補用，提供minor bug fix，準備產品發行版的meta-data(版號, 建置日期等)</li>
+<li>採用release branch的好處是可以讓develop較為乾淨。</li>
+</ul>
+<h3 id="產生-release-分支"><a href="#產生-release-分支" class="headerlink" title="產生 release 分支"></a>產生 release 分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 確定下一個版本是1.2之後</span></span><br><span class="line">git checkout -b release-1.2 develop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改產品的版本</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'version 1.2'</span> &gt;&gt; version.md</span><br><span class="line"></span><br><span class="line">git commit -a -m <span class="string">"Bumped version number to 1.2"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在這之後不會在release中加入新的feature，所有得新feauter留待下一版</span></span><br></pre></td></tr></table></figure>
+<h3 id="結束-release-分支"><a href="#結束-release-分支" class="headerlink" title="結束 release 分支"></a>結束 release 分支</h3><p>第一步，合併至master分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切換到master分支，準備要用master合併release-1.2分支</span></span><br><span class="line">git checkout master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合併release-1.2至master分支</span></span><br><span class="line">git merge --no-ff release-1.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 給予一個版次</span></span><br><span class="line">git tag -a 1.2</span><br></pre></td></tr></table></figure></p>
+<p>第二步，合併至develop分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切換至develop分支，準備要用develop合併relase-1.2分支</span></span><br><span class="line">git checkout develop</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合併relase-1.2至develop分支</span></span><br><span class="line">git merge --no-ff release-1.2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果有出現merge conflict再修改衝突得檔案就好</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 因為release-1.2的工作已經完成了，所以就可以刪除</span></span><br><span class="line">git branch -d release-1.2</span><br></pre></td></tr></table></figure>
+<h2 id="hotfix-分支"><a href="#hotfix-分支" class="headerlink" title="hotfix 分支"></a>hotfix 分支</h2><ul>
+<li>從master開出來的分支</li>
+<li>一定要合併回去develop以及master</li>
+<li>名字的取法是hotfix-xxx</li>
+<li>很像是release分支做得事情，只是不像release分支可以先做計畫</li>
+<li>通常是因為發行版出了需要立即修復的問題時，創立出來以修補問題的分支</li>
+<li>獨立分支的目的是讓救火隊可以產製hotfix，而開發組可以繼續開發</li>
+</ul>
+<p><img src="hotfix.png" alt="hotfix"></p>
+<h3 id="產生-hotfix-分支"><a href="#產生-hotfix-分支" class="headerlink" title="產生 hotfix 分支"></a>產生 hotfix 分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 收到要求需要進行hotfix，故修補1.2版的產品問題，故從master產出hotfix分支</span></span><br><span class="line">git checkout -b hotfix-1.2.1 master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改版本編號至1.2.1</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'version 1.2.1'</span> &gt;&gt; version.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交</span></span><br><span class="line">git commit -a -m <span class="string">"Bumped version number to 1.2.1"</span></span><br></pre></td></tr></table></figure>
+<p>修補完bug之後，提交修補的結果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"Fixed severe production problem"</span></span><br></pre></td></tr></table></figure>
+<h3 id="結束-hotfix-分支"><a href="#結束-hotfix-分支" class="headerlink" title="結束 hotfix 分支"></a>結束 hotfix 分支</h3><p>完成 hotfix 之後，要把 hotfix 分支合併至 master 以及 develop 兩個分支。</p>
+<p>先合併至 master<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切換到 master</span></span><br><span class="line">git checkout master</span><br><span class="line"><span class="comment"># 合併</span></span><br><span class="line">git merge --no-ff hotfix-1.2.1</span><br><span class="line"><span class="comment"># 在master分支中建立個標籤</span></span><br><span class="line">git tag -a 1.2.1</span><br></pre></td></tr></table></figure></p>
+<p>接下合併至 develop<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切換到 develop 分支</span></span><br><span class="line">git checkout develop</span><br><span class="line"><span class="comment"># 合併</span></span><br><span class="line">git merge --no-ff hotfix-1.2.1</span><br></pre></td></tr></table></figure></p>
+<p>hotfix 但合併至 develop 時有個例外。當 release 分支存在時，應該是要合併至 release 分支，而不是 develop 分支。依照前述得規則，當 release 分支結束後，也是會合併到 develop 分支。</p>
+<p>當然，如果有必要立即將 hotfix 合併至 develop ，也可以立即將 hotfix 合併至 develop 分支。</p>
+<p>最後，移除 hotfix 分支<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d hotfix-1.2.1</span><br></pre></td></tr></table></figure></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

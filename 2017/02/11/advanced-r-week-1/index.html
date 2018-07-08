@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Advanced R Week 1這是Advanced R第一周的課程內容整理，很有趣。
+FUNCTION
+To understand computations in R, two slogans are helpful:Everything that exists is an object.Eve"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Advanced R Week 1"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Advanced R Week 1這是Advanced R第一周的課程內容整理，很有趣。
+FUNCTION
+To understand computations in R, two slogans are helpful:Everything that exists is an object.Eve"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>Advanced R Week 1 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>Advanced R Week 1</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-02-11
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/R/">#R</a> <a href="/tags/coursera/">#coursera</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Advanced-R-Week-1"><a href="#Advanced-R-Week-1" class="headerlink" title="Advanced R Week 1"></a>Advanced R Week 1</h1><p>這是<a href="https://www.coursera.org/learn/advanced-r/" target="_blank" rel="noopener">Advanced R</a>第一周的課程內容整理，很有趣。</p>
+<h2 id="FUNCTION"><a href="#FUNCTION" class="headerlink" title="FUNCTION"></a>FUNCTION</h2><blockquote>
+<p><strong>To understand computations in R, two slogans are helpful:<br>Everything that exists is an object.<br>Everything that happens is a function call.<br>— John Chambers</strong></p>
+</blockquote>
+<ul>
+<li>你可以把function當作參數傳到另一個fucntion</li>
+</ul>
+<h2 id="A-Great-Function-Example"><a href="#A-Great-Function-Example" class="headerlink" title="A Great Function Example!!!!!!!"></a>A Great Function Example!!!!!!!</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(readr)</span><br><span class="line"><span class="comment"># read_csv</span></span><br><span class="line"><span class="keyword">library</span>(dplyr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(!file.exists(<span class="string">"data/2016-07-20.csv.gz"</span>)) &#123;</span><br><span class="line">	download.file(<span class="string">"http://cran-logs.rstudio.com/2016/2016-07-20.csv.gz"</span>, <span class="string">"data/2016-07-20.csv.gz"</span>)</span><br><span class="line">&#125;</span><br><span class="line">cran &lt;- read_csv(<span class="string">"data/2016-07-20.csv.gz"</span>,col_types=<span class="string">"ccicccccci"</span>)</span><br><span class="line"><span class="comment"># filter 是dplyr的函數</span></span><br><span class="line">cran %&gt;% filter(package == <span class="string">"filehash"</span>) %&gt;% nrow</span><br></pre></td></tr></table></figure>
+<h3 id="Function-with-default-value"><a href="#Function-with-default-value" class="headerlink" title="Function with default value"></a>Function with default value</h3><p>課程中改寫上例，滿漂亮的</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(dplyr)</span><br><span class="line"><span class="keyword">library</span>(readr)</span><br><span class="line"></span><br><span class="line"><span class="comment">## pkgname: package name (character)</span></span><br><span class="line"><span class="comment">## date: YYYY-MM-DD format (character)</span></span><br><span class="line">num_download &lt;- <span class="keyword">function</span>(pkgname, date=<span class="string">'2016-07-20'</span>) &#123;</span><br><span class="line">        <span class="comment">## Construct web URL</span></span><br><span class="line">        year &lt;- substr(date, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">        src &lt;- sprintf(<span class="string">"http://cran-logs.rstudio.com/%s/%s.csv.gz"</span>,</span><br><span class="line">                       year, date)</span><br><span class="line"></span><br><span class="line">        <span class="comment">## Construct path for storing local file</span></span><br><span class="line">        dest &lt;- file.path(<span class="string">"data"</span>, basename(src))</span><br><span class="line"></span><br><span class="line">        <span class="comment">## Don't download if the file is already there!</span></span><br><span class="line">        <span class="keyword">if</span>(!file.exists(dest))</span><br><span class="line">                download.file(src, dest, quiet = <span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line">        cran &lt;- read_csv(dest, col_types = <span class="string">"ccicccccci"</span>, progress = <span class="literal">FALSE</span>)</span><br><span class="line">        cran %&gt;% filter(package == pkgname) %&gt;% nrow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Refactoring"><a href="#Refactoring" class="headerlink" title="Refactoring!"></a>Refactoring!</h3><p>而且不用下載檔案兩次了</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">check_for_logfile &lt;- <span class="keyword">function</span>(date) &#123;</span><br><span class="line">        year &lt;- substr(date, <span class="number">1</span>, <span class="number">4</span>)</span><br><span class="line">        src &lt;- sprintf(<span class="string">"http://cran-logs.rstudio.com/%s/%s.csv.gz"</span>,</span><br><span class="line">                       year, date)</span><br><span class="line">        dest &lt;- file.path(<span class="string">"data"</span>, basename(src))</span><br><span class="line">        <span class="keyword">if</span>(!file.exists(dest)) &#123;</span><br><span class="line">                val &lt;- download.file(src, dest, quiet = <span class="literal">TRUE</span>)</span><br><span class="line">                <span class="keyword">if</span>(!val)</span><br><span class="line">                        <span class="keyword">stop</span>(<span class="string">"unable to download file "</span>, src)</span><br><span class="line">        &#125;</span><br><span class="line">        dest</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">num_download &lt;- <span class="keyword">function</span>(pkgname, date = <span class="string">"2016-07-20"</span>) &#123;</span><br><span class="line">        dest &lt;- check_for_logfile(date)</span><br><span class="line">        cran &lt;- read_csv(dest, col_types = <span class="string">"ccicccccci"</span>, progress = <span class="literal">FALSE</span>)</span><br><span class="line">        cran %&gt;% filter(package == pkgname) %&gt;% nrow</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Dependency-Checking"><a href="#Dependency-Checking" class="headerlink" title="Dependency Checking"></a>Dependency Checking</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">check_pkg_deps &lt;- <span class="keyword">function</span>() &#123;</span><br><span class="line">	<span class="keyword">if</span>(!requare(readr)) &#123;</span><br><span class="line">    	message(<span class="string">"installing the 'readr' package"</span>)</span><br><span class="line">        install.packages(<span class="string">"readr"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">require</span>(dplyr)) &#123;</span><br><span class="line">    	<span class="keyword">stop</span>(<span class="string">"the 'dplyr' package needs to be installed first"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Vectorization"><a href="#Vectorization" class="headerlink" title="Vectorization"></a>Vectorization</h3><p>通常R常見得使用模式要讓FUNCTION吃Vector，這邊告訴我們如何讓R能吃Vector及，最重要的，處理Vector。R這樣得特性，在這個例子中，可以讓我們一次傳入多個package，可以一次傳回多個package的資訊。<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">num_download &lt;- <span class="keyword">function</span>(pkgname, date = <span class="string">"2016-07-20"</span>) &#123;</span><br><span class="line">	check_pkg_deps()</span><br><span class="line">    dest &lt;- check_for_logfile(date)</span><br><span class="line">    cran &lt;- read_csv(dest, col_types=<span class="string">"ccicccccci"</span>, progress=<span class="literal">FALSE</span>)</span><br><span class="line">    cran %&gt;% filter(package %<span class="keyword">in</span>% pkgname) %&gt;%</span><br><span class="line">    	group_by(package) %&gt;%</span><br><span class="line">        summarize(n=n())</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># num_download 原本傳回integer，現在傳回data.frame</span></span><br><span class="line">num_download(c(<span class="string">"filehash"</span>, <span class="string">"weathermetrics"</span>))</span><br><span class="line"><span class="comment"># A tibble: 2 × 2</span></span><br><span class="line">         package     n</span><br><span class="line">           &lt;chr&gt; &lt;int&gt;</span><br><span class="line"><span class="number">1</span>       filehash   <span class="number">179</span></span><br><span class="line"><span class="number">2</span> weathermetrics     <span class="number">7</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Argument-Checking"><a href="#Argument-Checking" class="headerlink" title="Argument Checking"></a>Argument Checking</h3><p>hmmm, this is argument checking using <code>is.character</code> and <code>length</code><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">num_download &lt;- <span class="keyword">function</span>(pkgname, date = <span class="string">"2016-07-20"</span>) &#123;</span><br><span class="line">        check_pkg_deps()</span><br><span class="line"></span><br><span class="line">        <span class="comment">## Check arguments</span></span><br><span class="line">        <span class="keyword">if</span>(!is.character(pkgname))</span><br><span class="line">                <span class="keyword">stop</span>(<span class="string">"'pkgname' should be character"</span>)</span><br><span class="line">        <span class="keyword">if</span>(!is.character(date))</span><br><span class="line">                <span class="keyword">stop</span>(<span class="string">"'date' should be character"</span>)</span><br><span class="line">        <span class="keyword">if</span>(length(date) != <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">stop</span>(<span class="string">"'date' should be length 1"</span>)</span><br><span class="line"></span><br><span class="line">        dest &lt;- check_for_logfile(date)</span><br><span class="line">        cran &lt;- read_csv(dest, col_types = <span class="string">"ccicccccci"</span>,</span><br><span class="line">                         progress = <span class="literal">FALSE</span>)</span><br><span class="line">        cran %&gt;% filter(package %<span class="keyword">in</span>% pkgname) %&gt;%</span><br><span class="line">                group_by(package) %&gt;%</span><br><span class="line">                summarize(n = n())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="When-Sould-I-Write-a-Function"><a href="#When-Sould-I-Write-a-Function" class="headerlink" title="When Sould I Write a Function"></a>When Sould I Write a Function</h3><p>這個心法滿不錯的，先用<code>code</code>解決當前問題，再用<code>function</code>進行模組化以利處理廣泛一些的問題，過程中會持續重構，最後改用<code>package</code>做統整。</p>
+<blockquote>
+<p>Developing functions is a key aspect of programming in R and typically involves a bottom-up process.</p>
+</blockquote>
+<ul>
+<li>Code is written to accomplish a specific task or a specific instance of a task.</li>
+<li>The code is examined to identify key aspects that may be modified by other users; these aspects are abstracted out of the code and made arguments of a function.</li>
+<li>Functions are written to accomplish more general versions of a task; specific instances of the task are indicated by setting values of function arguments.</li>
+<li>Function code can be re-factored to provide better modularity and to divide functions into specific sub-tasks.</li>
+<li>Functions can be assembled and organized into R packages.</li>
+</ul>
+<h2 id="實作部份的摘要"><a href="#實作部份的摘要" class="headerlink" title="實作部份的摘要"></a>實作部份的摘要</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">evalute &lt;- <span class="keyword">function</span>(func,args) &#123;</span><br><span class="line">	func(args)</span><br><span class="line">&#125;</span><br><span class="line">evalute(sd, c(<span class="number">1.1</span>,<span class="number">2.2</span>,<span class="number">3.3</span>))</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>paste (..., sep = &quot; &quot;, collapse = NULL)</code> 在 ellipsis之後出現得argument都必需要有default value.</li>
+</ul>
+<h4 id="ellipses"><a href="#ellipses" class="headerlink" title="ellipses"></a>ellipses</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">telegram &lt;- <span class="keyword">function</span>(<span class="keyword">...</span>) &#123;</span><br><span class="line">	paste(<span class="string">"START"</span>, <span class="keyword">...</span>, <span class="string">"STOP"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mad_lib &lt;- <span class="keyword">function</span>(<span class="keyword">...</span>) &#123;</span><br><span class="line">	args &lt;- list(<span class="keyword">...</span>)</span><br><span class="line">    place &lt;- args[[<span class="string">"place"</span>]]</span><br><span class="line">    adjective &lt;- args[[<span class="string">"adjective"</span>]]</span><br><span class="line">    noun &lt;- args[[<span class="string">"noun"</span>]]</span><br><span class="line">    pates(<span class="string">"News from"</span> , place , <span class="string">"today where"</span>, adjective, <span class="string">"students took to the streets in protest of the new"</span>, noun, <span class="string">"being installed on campus)</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="self-maded-binary-operator"><a href="#self-maded-binary-operator" class="headerlink" title="self-maded binary operator"></a>self-maded binary operator</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"%mult_add_one%"</span> &lt;- <span class="keyword">function</span>(left, right)&#123;</span><br><span class="line">   left * right + <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">4</span> %mult_add_one% <span class="number">5</span></span><br><span class="line"><span class="comment"># 21</span></span><br><span class="line"></span><br><span class="line"><span class="string">"%p%"</span> &lt;- <span class="keyword">function</span>(left, right)&#123; <span class="comment"># Remember to add arguments!</span></span><br><span class="line">  paste(left, right)</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">'I'</span> %p% <span class="string">'love'</span> %p% <span class="string">'R!'</span></span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

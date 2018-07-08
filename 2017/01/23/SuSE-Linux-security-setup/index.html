@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Outline
+檢視SuSE的版本
+新建帳號群組
+設定sudo
+密碼強度設定
+使用者錯三次暫不可登入
+定期修改密碼
+閒置連線自動登出
+不允許root遠端登入
+參考資料
+
+檢視SuSE的版本12345678910# 檢視SuSE版本superuser@&amp;gt; cat /etc/issueWelcom"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="SuSE Linux設定"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Outline
+檢視SuSE的版本
+新建帳號群組
+設定sudo
+密碼強度設定
+使用者錯三次暫不可登入
+定期修改密碼
+閒置連線自動登出
+不允許root遠端登入
+參考資料
+
+檢視SuSE的版本12345678910# 檢視SuSE版本superuser@&amp;gt; cat /etc/issueWelcom"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>SuSE Linux設定 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>SuSE Linux設定</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-01-23
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/linux/">#linux</a> <a href="/tags/SuSE/">#SuSE</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="Outline"><a href="#Outline" class="headerlink" title="Outline"></a>Outline</h1><ol>
+<li>檢視SuSE的版本</li>
+<li>新建帳號群組</li>
+<li>設定sudo</li>
+<li>密碼強度設定</li>
+<li>使用者錯三次暫不可登入</li>
+<li>定期修改密碼</li>
+<li>閒置連線自動登出</li>
+<li>不允許root遠端登入</li>
+<li>參考資料</li>
+</ol>
+<h1 id="檢視SuSE的版本"><a href="#檢視SuSE的版本" class="headerlink" title="檢視SuSE的版本"></a>檢視SuSE的版本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 檢視SuSE版本</span></span><br><span class="line">superuser@&gt; cat /etc/issue</span><br><span class="line">Welcome to SUSE Linux Enterprise Server 11 SP1  (x86_64) - Kernel \r (\l).</span><br><span class="line"></span><br><span class="line"><span class="comment"># 檢視Linux版本</span></span><br><span class="line">superuser@&gt; uname -a</span><br><span class="line">Linux CHTASTER-200-2 2.6.32.54-0.91.TDC.1.R.0-default <span class="comment">#1 SMP 2016-10-18 14:21:57 +0200 x86_64 x86_64 x86_64 GNU/Linux</span></span><br><span class="line"><span class="comment"># 檢視核心版本</span></span><br><span class="line">superuser@&gt; uname -r</span><br><span class="line">2.6.32.54-0.91.TDC.1.R.0-default</span><br></pre></td></tr></table></figure>
+<h1 id="新建帳號群組"><a href="#新建帳號群組" class="headerlink" title="新建帳號群組"></a>新建帳號群組</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 新建帳號</span></span><br><span class="line">root$&gt; useradd superuser</span><br><span class="line">root$&gt; passwd superuser</span><br><span class="line"><span class="comment"># 建立帳號的家目錄</span></span><br><span class="line">root$&gt; mkdir /home/superuser</span><br><span class="line"><span class="comment"># 建立群組</span></span><br><span class="line">root$&gt; groupadd superuser</span><br><span class="line"><span class="comment"># 把用戶加入到群組</span></span><br><span class="line">root$&gt; usermod -g superuser superuser</span><br><span class="line"><span class="comment"># 把家目錄(superuser)的權限改成的ower改成superuser，群組改成superuser</span></span><br><span class="line">root$&gt; chown -R superuser superuser</span><br><span class="line">root$&gt; chgrp -R superuser superuser</span><br></pre></td></tr></table></figure>
+<h1 id="設定sudo"><a href="#設定sudo" class="headerlink" title="設定sudo"></a>設定sudo</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># visudo，加入一個群組，使其能執行所有的指令</span></span><br><span class="line"><span class="comment"># visudo</span></span><br><span class="line"><span class="comment"># Uncomment to allow people in group wheel to run all commands</span></span><br><span class="line"><span class="comment"># %wheel ALL=(ALL) ALL</span></span><br><span class="line">%superuser ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
+<h1 id="密碼強度設定"><a href="#密碼強度設定" class="headerlink" title="密碼強度設定"></a>密碼強度設定</h1><p>參照參考資料(1)。不使用pwcheck.so，改用cracklib.so。設定資料會寫到/etc/pam.d/common-password<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">superuser@&gt; /usr/sbin/pam-config -d --pwcheck</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-minlen=12</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-lcredit=-1</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-ucredit=-1</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-dcredit=-1</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-ocredit=-1</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --cracklib-retry=3</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --pwhistory</span><br><span class="line">superuser@&gt; /usr/sbin/pam-config -a --pwhistory-remember=3</span><br></pre></td></tr></table></figure></p>
+<p>pam_cracklib.so</p>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>nullok</td>
+<td>預設上不允許空白成為密碼，加入nullok就可以使用空白為密碼。</td>
+</tr>
+<tr>
+<td>retry</td>
+<td>使用者有多少次機會可以設定符合規定的密碼。</td>
+</tr>
+<tr>
+<td>lcredit</td>
+<td>小寫英文的credit。設定數值為-N，代表密碼中至少要有N個該種類字元，其道理類推至大寫、數字以及特殊字元的credit設定。</td>
+</tr>
+<tr>
+<td>ucredit</td>
+<td>大寫英文的credit</td>
+</tr>
+<tr>
+<td>dcredit</td>
+<td>數字的credit</td>
+</tr>
+<tr>
+<td>ocredit</td>
+<td>特殊字元的credit</td>
+</tr>
+<tr>
+<td>minlen</td>
+<td>密碼最小credit要求。例如：設定密碼為jd9Ge$d3，其長度為8，但含有小寫、大寫、數字跟其他字元，所以一共可以得到4個credit，4+8=12的狀況下還是會被接受。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="使用者錯三次暫不可登入"><a href="#使用者錯三次暫不可登入" class="headerlink" title="使用者錯三次暫不可登入"></a>使用者錯三次暫不可登入</h3><p>修改/etc/pam.d/common-auth，加入pam_tally2.so的設定，最下面粗體那行。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> 修改/etc/pam.d/common-auth</span><br><span class="line">superuser@&gt; vim /etc/pam.d/common-auth</span><br><span class="line"><span class="comment">#%PAM-1.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This file is autogenerated by pam-config. All changes</span></span><br><span class="line"><span class="comment"># will be overwritten.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Authentication-related modules common to all services</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This file is included from other service-specific PAM config files,</span></span><br><span class="line"><span class="comment"># and should contain a list of the authentication modules that define</span></span><br><span class="line"><span class="comment"># the central authentication scheme for use on the system</span></span><br><span class="line"><span class="comment"># (e.g., /etc/shadow, LDAP, Kerberos, etc.). The default is to use the</span></span><br><span class="line"><span class="comment"># traditional Unix authentication mechanisms.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">auth    required        pam_env.so</span><br><span class="line"></span><br><span class="line">auth    required        pam_unix2.so</span><br><span class="line">**auth    required        pam_tally2.so onerr=fail deny=3 unlock_time=30 even_deny_root root_unlock_time=30**</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>參數</th>
+<th>解釋</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deny</td>
+<td>Root及其他使用者登入失敗的次數，超過即鎖定</td>
+</tr>
+<tr>
+<td>unlock_time</td>
+<td>一般使用者於鎖定後多久才能解鎖，單位為秒</td>
+</tr>
+<tr>
+<td>even_deny_root</td>
+<td>也限制root</td>
+</tr>
+<tr>
+<td>root_unlock_time</td>
+<td>root於鎖定後多久才能解鎖，單位為秒</td>
+</tr>
+<tr>
+<td>onerr</td>
+<td>如果有甚麼奇怪的狀況發生時，fail表示回傳error code，而success表示回傳成功。</td>
+</tr>
+</tbody>
+</table>
+<p>如果只有改/etc/pam.d/common-auth，當密碼輸入錯誤超過上限時，雖然會自動解開，但是接下來輸入正確的密碼，錯誤次數照樣會增加，而可能會發生問題。因此要在修改/etc/pam,d/common-account，加入account required pam_tally2.so，下表中粗體那行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改/etc/pam.d/common-account</span></span><br><span class="line">superuser@&gt; vim /etc/pam.d/common-account</span><br><span class="line"><span class="comment">#%PAM-1.0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This file is autogenerated by pam-config. All changes</span></span><br><span class="line"><span class="comment"># will be overwritten.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Account-related modules common to all services</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># This file is included from other service-specific PAM config files,</span></span><br><span class="line"><span class="comment"># and should contain a list of the accountorization modules that define</span></span><br><span class="line"><span class="comment"># the central access policy for use on the system.  The default is to</span></span><br><span class="line"><span class="comment"># only deny service to users whose accounts are expired.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">account required        pam_unix2.so</span><br><span class="line">**account required        pam_tally2.so**</span><br></pre></td></tr></table></figure>
+<p>當使用者被所定時，可以用下列指令解鎖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以檢視使用者的登入犯錯次數</span></span><br><span class="line"><span class="comment"># pam_tally2 --user=superuser</span></span><br><span class="line">Login           Failures Latest failure     From</span><br><span class="line">superuser            3</span><br><span class="line"></span><br><span class="line"><span class="comment"># pam_tally2 --user=superuser --reset=0</span></span><br><span class="line"><span class="comment"># pam_tally2 --user=superuser </span></span><br><span class="line">Login           Failures Latest failure     From</span><br><span class="line">superuser             0</span><br></pre></td></tr></table></figure></p>
+<h1 id="定期修改密碼"><a href="#定期修改密碼" class="headerlink" title="定期修改密碼"></a>定期修改密碼</h1><p>修改/etc/login.defs中的PASS_MAX_DAYS為90天。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Password aging controls (used by useradd):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># PASS_MAX_DAYS Maximum number of days a password may be used.</span></span><br><span class="line"><span class="comment"># PASS_MIN_DAYS Minimum number of days allowed between password changes.</span></span><br><span class="line"><span class="comment"># PASS_WARN_AGE Number of days warning given before a password expires.</span></span><br><span class="line">PASS_MAX_DAYS   90</span><br><span class="line">PASS_MIN_DAYS   0</span><br><span class="line">PASS_WARN_AGE   7</span><br></pre></td></tr></table></figure></p>
+<h1 id="閒置連線自動登出"><a href="#閒置連線自動登出" class="headerlink" title="閒置連線自動登出"></a>閒置連線自動登出</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 編輯/etc/profile</span></span><br><span class="line">superuser@&gt; vim /etc/profile</span><br><span class="line"><span class="comment"># 設定閒置30分鐘後登出</span></span><br><span class="line"><span class="built_in">export</span> TMOUT=1800</span><br></pre></td></tr></table></figure>
+<h1 id="不允許root遠端登入"><a href="#不允許root遠端登入" class="headerlink" title="不允許root遠端登入"></a>不允許root遠端登入</h1><p>修改/etc/ssh/sshd_config<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 編輯/etc/ssh/sshd_config</span></span><br><span class="line"><span class="comment"># PermitRootLogin要改為no</span></span><br><span class="line">superuser@&gt; vim /etc/ssh/sshd_config</span><br><span class="line"><span class="comment">#LoginGraceTime 2m</span></span><br><span class="line">**PermitRootLogin no**</span><br><span class="line"><span class="comment">#StrictModes yes</span></span><br><span class="line"><span class="comment">#MaxAuthTries 6</span></span><br><span class="line"><span class="comment">#MaxSessions 10</span></span><br><span class="line"><span class="comment"># 改完要重啟sshd才會生效</span></span><br><span class="line"><span class="comment"># 不過重啟sshd似乎不影響已連上的連線</span></span><br><span class="line">superuser@&gt; /etc/init.d/sshd restart</span><br></pre></td></tr></table></figure></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ol>
+<li>SLE11帳戶密碼強度設定 <a href="http://blog.xuite.net/misgarlic/weblogic/29368627-SLES11+user+account+password+policy" target="_blank" rel="noopener">http://blog.xuite.net/misgarlic/weblogic/29368627-SLES11+user+account+password+policy</a></li>
+<li>SLE11SP2 pam.tally2.so的設定方式 <a href="https://www.novell.com/support/kb/doc.php?id=7011883" target="_blank" rel="noopener">https://www.novell.com/support/kb/doc.php?id=7011883</a></li>
+<li>註解targetpw <a href="http://blog.xuite.net/trully.hsiang/man/30309937-%5BSUSE%5D+%E5%BB%BA%E7%AB%8B%E4%BD%BF%E7%94%A8%E8%80%85+%E5%8F%8A+sudo+%E6%AC%8A%E9%99%90" target="_blank" rel="noopener">http://blog.xuite.net/trully.hsiang/man/30309937-%5BSUSE%5D+%E5%BB%BA%E7%AB%8B%E4%BD%BF%E7%94%A8%E8%80%85+%E5%8F%8A+sudo+%E6%AC%8A%E9%99%90</a></li>
+<li>感謝同事怡文提供整理 :)</li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

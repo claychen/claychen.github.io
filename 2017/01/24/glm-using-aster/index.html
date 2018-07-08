@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="分析方法本文中的分析流程及方法詳如參考資料1，其實本文只有分析工具改成aster而已。
+下載資料集下載train.csv。https://www.kaggle.com/c/titanic/data下載之後把分隔符號改成’\t’，新檔名為train_new.txt
+在aster內建立資料表123456"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="GLM using aster"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="分析方法本文中的分析流程及方法詳如參考資料1，其實本文只有分析工具改成aster而已。
+下載資料集下載train.csv。https://www.kaggle.com/c/titanic/data下載之後把分隔符號改成’\t’，新檔名為train_new.txt
+在aster內建立資料表123456"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>GLM using aster - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>GLM using aster</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-01-24
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/aster/">#aster</a> <a href="/tags/glm/">#glm</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h1 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h1><p>本文中的分析流程及方法詳如參考資料1，其實本文只有分析工具改成aster而已。</p>
+<h1 id="下載資料集"><a href="#下載資料集" class="headerlink" title="下載資料集"></a>下載資料集</h1><p>下載train.csv。<br><a href="https://www.kaggle.com/c/titanic/data" target="_blank" rel="noopener">https://www.kaggle.com/c/titanic/data</a><br>下載之後把分隔符號改成’\t’，新檔名為train_new.txt</p>
+<h1 id="在aster內建立資料表"><a href="#在aster內建立資料表" class="headerlink" title="在aster內建立資料表"></a>在aster內建立資料表</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> titanic (</span><br><span class="line">	PassengerId <span class="built_in">varchar</span>,</span><br><span class="line">	Survived <span class="built_in">varchar</span>,</span><br><span class="line">	Pclass <span class="built_in">varchar</span>,</span><br><span class="line">	<span class="keyword">Name</span> <span class="built_in">varchar</span>,</span><br><span class="line">	Sex <span class="built_in">varchar</span>,</span><br><span class="line">	Age <span class="built_in">varchar</span>,</span><br><span class="line">	SibSp <span class="built_in">varchar</span>,</span><br><span class="line">	Parch <span class="built_in">varchar</span>,</span><br><span class="line">	Ticket <span class="built_in">varchar</span>,</span><br><span class="line">	Fare <span class="built_in">varchar</span>,</span><br><span class="line">	Cabin <span class="built_in">varchar</span>,</span><br><span class="line">	Embarked <span class="built_in">varchar</span></span><br><span class="line">) <span class="keyword">distribute</span> <span class="keyword">by</span> <span class="keyword">hash</span>(PassengerId);</span><br></pre></td></tr></table></figure>
+<h1 id="上傳資料到aster"><a href="#上傳資料到aster" class="headerlink" title="上傳資料到aster"></a>上傳資料到aster</h1><p>ncluster_loader -h hostname -U username -w password -d database -D ‘\t’ –el-enabled –truncate –skip-row 1 titanic train.txt</p>
+<h1 id="建立titanic-fmt"><a href="#建立titanic-fmt" class="headerlink" title="建立titanic_fmt"></a>建立titanic_fmt</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> titanic_fmt;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> titanic_fmt (</span><br><span class="line">	PassengerId <span class="built_in">int</span>,</span><br><span class="line">	Survived <span class="built_in">int</span>,</span><br><span class="line">	Pclass <span class="built_in">int</span>,</span><br><span class="line">	<span class="keyword">Name</span> <span class="built_in">varchar</span>,</span><br><span class="line">	Sex <span class="built_in">varchar</span>,</span><br><span class="line">	Age <span class="keyword">double</span>,</span><br><span class="line">	SibSp <span class="built_in">int</span>,</span><br><span class="line">	Parch <span class="built_in">int</span>,</span><br><span class="line">	Ticket <span class="built_in">varchar</span>,</span><br><span class="line">	Fare <span class="keyword">double</span>,</span><br><span class="line">	Cabin <span class="built_in">varchar</span>,</span><br><span class="line">	Embarked <span class="built_in">varchar</span></span><br><span class="line">) <span class="keyword">distribute</span> <span class="keyword">by</span> <span class="keyword">hash</span>(PassengerId);</span><br></pre></td></tr></table></figure>
+<h1 id="資料前處理"><a href="#資料前處理" class="headerlink" title="資料前處理"></a>資料前處理</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * coalesce(cast(nullif(Age, '') as double), NULL)的解釋：</span></span><br><span class="line"><span class="comment"> * 1. 如果Age的值不為空字串('')：那就轉成double。</span></span><br><span class="line"><span class="comment"> * 2. 如果Age的值等於空字串('')：那就回傳NULL。</span></span><br><span class="line"><span class="comment"> * 2.1 nullif(Age,'') 表示如果Age的值是空字串('')，那就傳會NULL，而NULL經過cast之後還是NULL，</span></span><br><span class="line"><span class="comment"> * 2.2 coalesce會傳回第一個非NULL的值，如果每個值都是NULL，那就回傳NULL。</span></span><br><span class="line"><span class="comment"> * 2.3 詳見參考資料2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> titanic_fmt</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">cast</span>(PASSENGERID <span class="keyword">as</span> <span class="built_in">int</span>), </span><br><span class="line"><span class="keyword">cast</span>(Survived <span class="keyword">as</span> <span class="built_in">int</span>), </span><br><span class="line"><span class="keyword">coalesce</span>(<span class="keyword">cast</span>(<span class="keyword">nullif</span>(Pclass,<span class="string">''</span>) <span class="keyword">as</span> <span class="built_in">float</span>), <span class="literal">NULL</span>), </span><br><span class="line"><span class="keyword">Name</span>, </span><br><span class="line">Sex, </span><br><span class="line"><span class="keyword">coalesce</span>(<span class="keyword">cast</span>(<span class="keyword">nullif</span>(Age,<span class="string">''</span>) <span class="keyword">as</span> <span class="keyword">double</span>), <span class="literal">NULL</span>),  </span><br><span class="line"><span class="keyword">coalesce</span>(<span class="keyword">cast</span>(<span class="keyword">nullif</span>(SibSp,<span class="string">''</span>) <span class="keyword">as</span> <span class="built_in">int</span>), <span class="literal">NULL</span>),</span><br><span class="line"><span class="keyword">coalesce</span>(<span class="keyword">cast</span>(<span class="keyword">nullif</span>(Parch,<span class="string">''</span>) <span class="keyword">as</span> <span class="built_in">int</span>), <span class="literal">NULL</span>),</span><br><span class="line">Ticket, </span><br><span class="line"><span class="keyword">coalesce</span>(<span class="keyword">cast</span>(<span class="keyword">nullif</span>(Fare,<span class="string">''</span>) <span class="keyword">as</span> <span class="keyword">double</span>), <span class="literal">NULL</span>),</span><br><span class="line">Cabin, </span><br><span class="line">Embarked <span class="keyword">from</span> titanic;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> titanic_fmt <span class="keyword">where</span> Age <span class="keyword">IS</span> <span class="literal">NULL</span>; <span class="comment">--共有177筆資料沒有年齡資訊</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sum</span>(Age) <span class="keyword">as</span> ss , <span class="keyword">count</span>(*) <span class="keyword">as</span> mm <span class="keyword">from</span> titanic_fmt <span class="keyword">where</span> Age <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>; <span class="comment">-- 計算年齡的平均值</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">avg</span>(Age) <span class="keyword">from</span> titanic_fmt; <span class="comment">--平均年齡是29.69912</span></span><br><span class="line"><span class="keyword">update</span> titanic_fmt <span class="keyword">set</span> Age = <span class="number">29.69912</span> <span class="keyword">where</span> Age <span class="keyword">IS</span> <span class="literal">NULL</span>; <span class="comment">--177資料受到影響</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> titanic_fmt; <span class="comment">-- 會有891筆資料</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> titanic_fmt <span class="keyword">where</span> embarked = <span class="string">''</span>; <span class="comment">--會有兩筆資料</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> titanic_fmt <span class="keyword">where</span> embarked = <span class="string">''</span>; <span class="comment">--刪除這兩筆資料</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> titanic_fmt; <span class="comment">-- 會有889筆資料</span></span><br></pre></td></tr></table></figure>
+<h1 id="切割訓練集、測試集"><a href="#切割訓練集、測試集" class="headerlink" title="切割訓練集、測試集"></a>切割訓練集、測試集</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 訓練集</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> titanic_fmt_train;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> titanic_fmt_train (</span><br><span class="line">	PassengerId <span class="built_in">int</span>,</span><br><span class="line">	Survived <span class="built_in">int</span>,</span><br><span class="line">	Pclass <span class="built_in">int</span>,</span><br><span class="line">	<span class="keyword">Name</span> <span class="built_in">varchar</span>,</span><br><span class="line">	Sex <span class="built_in">varchar</span>,</span><br><span class="line">	Age <span class="keyword">double</span>,</span><br><span class="line">	SibSp <span class="built_in">int</span>,</span><br><span class="line">	Parch <span class="built_in">int</span>,</span><br><span class="line">	Ticket <span class="built_in">varchar</span>,</span><br><span class="line">	Fare <span class="keyword">double</span>,</span><br><span class="line">	Cabin <span class="built_in">varchar</span>,</span><br><span class="line">	Embarked <span class="built_in">varchar</span></span><br><span class="line">) <span class="keyword">distribute</span> <span class="keyword">by</span> <span class="keyword">hash</span>(PassengerId);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> titanic_fmt_train <span class="keyword">select</span> * <span class="keyword">from</span> titanic_fmt <span class="keyword">order</span> <span class="keyword">by</span> PassengerId <span class="keyword">LIMIT</span> <span class="number">800</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 測試集</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> titanic_fmt_test;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> titanic_fmt_test (</span><br><span class="line">	PassengerId <span class="built_in">int</span>,</span><br><span class="line">	Survived <span class="built_in">int</span>,</span><br><span class="line">	Pclass <span class="built_in">int</span>,</span><br><span class="line">	<span class="keyword">Name</span> <span class="built_in">varchar</span>,</span><br><span class="line">	Sex <span class="built_in">varchar</span>,</span><br><span class="line">	Age <span class="keyword">double</span>,</span><br><span class="line">	SibSp <span class="built_in">int</span>,</span><br><span class="line">	Parch <span class="built_in">int</span>,</span><br><span class="line">	Ticket <span class="built_in">varchar</span>,</span><br><span class="line">	Fare <span class="keyword">double</span>,</span><br><span class="line">	Cabin <span class="built_in">varchar</span>,</span><br><span class="line">	Embarked <span class="built_in">varchar</span></span><br><span class="line">) <span class="keyword">distribute</span> <span class="keyword">by</span> <span class="keyword">hash</span>(PassengerId);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> titanic_fmt_test <span class="keyword">select</span> * <span class="keyword">from</span> titanic_fmt <span class="keyword">where</span> passengerid &gt; <span class="number">801</span> ;</span><br></pre></td></tr></table></figure>
+<h1 id="執行GLM"><a href="#執行GLM" class="headerlink" title="執行GLM"></a>執行GLM</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> titanic_fmt_glm_maxiter10_LOGIT;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> GLM (</span><br><span class="line">	<span class="keyword">ON</span> (<span class="keyword">SELECT</span> <span class="number">1</span>)</span><br><span class="line">	<span class="keyword">PARTITION</span> <span class="keyword">BY</span> <span class="number">1</span></span><br><span class="line">	InputTable(<span class="string">'titanic_fmt_train'</span>)</span><br><span class="line">	OutputTable(<span class="string">'titanic_fmt_glm_maxiter10_LOGIT'</span>)</span><br><span class="line">	ColumnNames(<span class="string">'Survived'</span>,<span class="string">'Pclass'</span>,<span class="string">'Sex'</span>,<span class="string">'Age'</span>,<span class="string">'SibSp'</span>,<span class="string">'Parch'</span>, <span class="string">'Fare'</span>,<span class="string">'Embarked'</span>)</span><br><span class="line">	CategoricalColumns(<span class="string">'Sex'</span>,<span class="string">'Embarked'</span>)</span><br><span class="line">	Family(<span class="string">'LOGISTIC'</span>)</span><br><span class="line">	<span class="keyword">Link</span>(<span class="string">'LOGIT'</span>)</span><br><span class="line">	Weight(<span class="string">'1'</span>)</span><br><span class="line">	Threshold(<span class="string">'0.01'</span>)</span><br><span class="line">	MaxIterNum(<span class="string">'10'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"> predictor               estimate   std_error  z_score  p_value     significance</span><br><span class="line"> <span class="comment">----------------------- ---------- ---------- -------- ----------- ---------------------------------------</span></span><br><span class="line"> (Intercept)                2.06202   0.515927  3.99673  6.42237E-5 ***</span><br><span class="line"> pclass                    -1.08716   0.151168 -7.19171 6.39933E-13 ***</span><br><span class="line"> sex.female                 2.75682   0.212026  13.0023         0.0 ***</span><br><span class="line"> age                     -0.0372674 0.00819547 -4.54732  5.43341E-6 ***</span><br><span class="line"> sibsp                     -0.29292   0.114642 -2.55509    0.010616 *</span><br><span class="line"> parch                    -0.116576   0.128127 -0.90985    0.362902  </span><br><span class="line"> fare                    0.00152848 0.00235344 0.649467    0.516036  </span><br><span class="line"> embarked.C                0.318786    0.25296  1.26022    0.207588  </span><br><span class="line"> embarked.Q                 0.31613   0.341988 0.924388    0.355285  </span><br><span class="line"> ITERATIONS #                   5.0        0.0      0.0         0.0  </span><br><span class="line"> ROWS #                       800.0        0.0      0.0         0.0 Number of rows</span><br><span class="line"> Residual deviance           709.39        0.0      0.0         0.0 on 791 degrees of freedom</span><br><span class="line"> Pearson goodness of fit    813.471        0.0      0.0         0.0 on 791 degrees of freedom</span><br><span class="line"> AIC                         727.39        0.0      0.0         0.0 Akaike information criterion</span><br><span class="line"> BIC                        769.552        0.0      0.0         0.0 Bayesian information criterion</span><br><span class="line"> Wald Test                   235.81        0.0      0.0         0.0 ***</span><br><span class="line"> Dispersion parameter           1.0        0.0      0.0         0.0 Taken to be 1 for BINOMIAL and POISSON.</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> titanic_fmt_glm_maxiter10_CANONICAL;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> GLM (</span><br><span class="line">	<span class="keyword">ON</span> (<span class="keyword">SELECT</span> <span class="number">1</span>)</span><br><span class="line">	<span class="keyword">PARTITION</span> <span class="keyword">BY</span> <span class="number">1</span></span><br><span class="line">	InputTable(<span class="string">'titanic_fmt_train'</span>)</span><br><span class="line">	OutputTable(<span class="string">'titanic_fmt_glm_maxiter10_CANONICAL'</span>)</span><br><span class="line">	ColumnNames(<span class="string">'Survived'</span>,<span class="string">'Pclass'</span>,<span class="string">'Sex'</span>,<span class="string">'Age'</span>,<span class="string">'SibSp'</span>,<span class="string">'Parch'</span>, <span class="string">'Fare'</span>,<span class="string">'Embarked'</span>)</span><br><span class="line">	CategoricalColumns(<span class="string">'Sex'</span>,<span class="string">'Embarked'</span>)</span><br><span class="line">	Family(<span class="string">'LOGISTIC'</span>)</span><br><span class="line">	<span class="keyword">Link</span>(<span class="string">'CANONICAL'</span>)</span><br><span class="line">	Weight(<span class="string">'1'</span>)</span><br><span class="line">	Threshold(<span class="string">'0.01'</span>)</span><br><span class="line">	MaxIterNum(<span class="string">'10'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">predictor               estimate   std_error  z_score  p_value     significance</span><br><span class="line"> <span class="comment">----------------------- ---------- ---------- -------- ----------- ---------------------------------------</span></span><br><span class="line"> (Intercept)                2.06202   0.515927  3.99673  6.42237E-5 ***</span><br><span class="line"> pclass                    -1.08716   0.151168 -7.19171 6.39933E-13 ***</span><br><span class="line"> sex.female                 2.75682   0.212026  13.0023         0.0 ***</span><br><span class="line"> age                     -0.0372674 0.00819547 -4.54732  5.43341E-6 ***</span><br><span class="line"> sibsp                     -0.29292   0.114642 -2.55509    0.010616 *</span><br><span class="line"> parch                    -0.116576   0.128127 -0.90985    0.362902  </span><br><span class="line"> fare                    0.00152848 0.00235344 0.649467    0.516036  </span><br><span class="line"> embarked.C                0.318786    0.25296  1.26022    0.207588  </span><br><span class="line"> embarked.Q                 0.31613   0.341988 0.924388    0.355285  </span><br><span class="line"> ITERATIONS #                   5.0        0.0      0.0         0.0 Number of Fisher Scoring iterations</span><br><span class="line"> ROWS #                       800.0        0.0      0.0         0.0 Number of rows</span><br><span class="line"> Residual deviance           709.39        0.0      0.0         0.0 on 791 degrees of freedom</span><br><span class="line"> Pearson goodness of fit    813.471        0.0      0.0         0.0 on 791 degrees of freedom</span><br><span class="line"> AIC                         727.39        0.0      0.0         0.0 Akaike information criterion</span><br><span class="line"> BIC                        769.552        0.0      0.0         0.0 Bayesian information criterion</span><br><span class="line"> Wald Test                   235.81        0.0      0.0         0.0 ***</span><br><span class="line"> Dispersion parameter           1.0        0.0      0.0         0.0 Taken to be 1 for BINOMIAL and POISSON.</span><br><span class="line"> </span><br><span class="line"><span class="comment">-- LOGISTIC REGRESSION中，LINK參數採用LOGIT跟CANONICAL昰一樣的</span></span><br></pre></td></tr></table></figure>
+<h1 id="預測"><a href="#預測" class="headerlink" title="預測"></a>預測</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> GLMPredict (</span><br><span class="line">	<span class="keyword">ON</span> titanic_fmt_test</span><br><span class="line">	MODELTABLE(<span class="string">'titanic_fmt_glm_maxiter10_CANONICAL'</span>)</span><br><span class="line">	ACCUMULATE(<span class="string">'PassengerID'</span>,<span class="string">'Survived'</span>,<span class="string">'Pclass'</span>,<span class="string">'Sex'</span>,<span class="string">'Age'</span>,<span class="string">'SibSp'</span>,<span class="string">'Parch'</span>, <span class="string">'Fare'</span>,<span class="string">'Embarked'</span>)</span><br><span class="line">	FAMILY(<span class="string">'LOGISTIC'</span>)</span><br><span class="line">	<span class="keyword">LINK</span>(<span class="string">'LOGIT'</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"> passengerid survived pclass sex    age      sibsp parch fare     embarked fitted_value</span><br><span class="line"> <span class="comment">----------- -------- ------ ------ -------- ----- ----- -------- -------- -------------------</span></span><br><span class="line">         810        1      1 female     33.0     1     0     53.1 S          0.908053639982344</span><br><span class="line">         812        0      3 male       39.0     0     0    24.15 S          0.068117295005812</span><br><span class="line">         814        0      3 female      6.0     4     2   31.275 S          0.494181965604929</span><br><span class="line">         818        0      2 male       31.0     1     1  37.0042 C          0.213872454530157</span><br><span class="line">         832        1      2 male       0.83     1     1    18.75 S          0.371901272257794</span><br><span class="line">         834        0      3 male       23.0     0     0   7.8542 S          0.114598630573453</span><br><span class="line">         836        1      1 female     39.0     1     1  83.1583 C          0.910082870446927</span><br><span class="line">         852        0      3 male       74.0     0     0    7.775 S         0.0189770840959977</span><br><span class="line">         854        1      1 female     16.0     0     1     39.4 S          0.956020162455781</span><br><span class="line">         856        1      3 female     18.0     0     1     9.35 S          0.686597963722023</span><br><span class="line">         858        1      1 male       51.0     0     0    26.55 S          0.292102145402033</span><br><span class="line">         870        1      3 male        4.0     1     1  11.1333 S          0.149184872245865</span><br><span class="line">         872        1      1 female     47.0     1     1  52.5542 S          0.839018626811447</span><br><span class="line">         874        0      3 male       47.0     0     0      9.0 S         0.0503415563955056</span><br><span class="line">         876        1      3 female     15.0     0     0    7.225 C          0.790539139294955</span><br><span class="line">         878        0      3 male       19.0     0     0   7.8958 S          0.130621810339474</span><br><span class="line">         890        1      1 male       26.0     0     0     30.0 C          0.591591387913052</span><br><span class="line">略</span><br></pre></td></tr></table></figure>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ol>
+<li><a href="https://datascienceplus.com/perform-logistic-regression-in-r/" target="_blank" rel="noopener">https://datascienceplus.com/perform-logistic-regression-in-r/</a></li>
+<li><a href="http://stackoverflow.com/questions/18950951/cast-string-to-number-interpreting-null-or-empty-string-as-0" target="_blank" rel="noopener">http://stackoverflow.com/questions/18950951/cast-string-to-number-interpreting-null-or-empty-string-as-0</a></li>
+</ol>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
